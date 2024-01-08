@@ -1,9 +1,10 @@
 import "./App.css";
+import Office from "./assets/Office/Office";
 
 function App() {
   return (
     <>
-      <h1>Hello World</h1>
+      <Office />
     </>
   );
 }
