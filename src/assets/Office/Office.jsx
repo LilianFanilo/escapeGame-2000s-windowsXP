@@ -1,15 +1,11 @@
 import s from "./Office.module.scss";
+import OfficeFooter from "./OfficeFooter/OfficeFooter";
 
 function Office() {
   return (
     <>
       <div className={s.officeComponent}>
-        <footer className={s.bottomBar}>
-          <div>
-            <img src="" alt="" />
-          </div>
-          <div></div>
-        </footer>
+        <OfficeFooter />
       </div>
     </>
   );
