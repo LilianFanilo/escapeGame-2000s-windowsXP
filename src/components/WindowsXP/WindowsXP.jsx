@@ -5,7 +5,7 @@ import Notepad from "./apps/Notepad/Notepad";
 function WindowsXP() {
   return (
     <>
-      <div className={s.officeComponent}>
+      <div className={s.windowsXP}>
         <OfficeFooter />
       </div>
       <Notepad />
