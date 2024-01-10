@@ -1,0 +1,8 @@
+.btnOffContainer {
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    background-color: rgba(60, 80, 210, 0.5);
+  }
+}
