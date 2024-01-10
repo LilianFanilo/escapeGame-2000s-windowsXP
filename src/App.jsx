@@ -1,5 +1,5 @@
 import "./App.css";
-import WindowsXP from "./assets/WindowsXP/Windows";
+import WindowsXP from "./assets/WindowsXP/WindowsXP";
 
 function App() {
   return (

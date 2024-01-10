@@ -1,4 +1,4 @@
-import s from "./Office.module.scss";
+import s from "./WindowsXP.module.scss";
 import OfficeFooter from "./OfficeFooter/OfficeFooter";
 
 function WindowsXP() {
