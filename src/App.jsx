@@ -1,10 +1,10 @@
 import "./App.css";
-import Office from "./assets/Office/Office";
+import WindowsXP from "./assets/WindowsXP/Windows";
 
 function App() {
   return (
     <>
-      <Office />
+      <WindowsXP />
     </>
   );
 }

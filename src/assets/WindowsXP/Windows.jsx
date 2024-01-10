@@ -1,7 +1,7 @@
 import s from "./Office.module.scss";
 import OfficeFooter from "./OfficeFooter/OfficeFooter";
 
-function Office() {
+function WindowsXP() {
   return (
     <>
       <div className={s.officeComponent}>
@@ -11,4 +11,4 @@ function Office() {
   );
 }
 
-export default Office;
+export default WindowsXP;
