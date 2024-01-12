@@ -1,11 +1,51 @@
+import { useEffect } from "react";
 import ButtonOff from "../ButtonOff/ButtonOff";
-import ProfileLogin from "../ProfileLogin/ProfileLogin";
 import s from "./LoginPage.module.scss";
 
-function LoginPage() {
+function ProfileLogin() {
   return (
     <>
-      <div className={s.loginPageComponent}>
+      <div className={s.ProfileLogin}>
+        <img className={s.profileIMG} src="" alt="" width={60} height={60} />
+        <span>Elodie</span>
+        <input type="password" name="" id="loginPassword" />
+        <img src="" alt="" />
+      </div>
+    </>
+  );
+}
+
+function LoginPage() {
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      const keyName = event.key;
+
+      if (keyName === "Enter") {
+        let pwd = document.querySelector("#loginPassword").value;
+        const pwdGood = "VJta";
+        console.log(pwd);
+        if (pwd === pwdGood) {
+          console.log("Et vous avez raison !");
+          let loginPage = document.querySelector(".loginPage");
+          console.log(loginPage);
+          loginPage.classList.add("is_hidden");
+        } else {
+          console.log("Vous me décevez...");
+        }
+        return;
+      }
+    };
+
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, []);
+
+  return (
+    <>
+      <div className={`${s.loginPageComponent} loginPage`}>
         <div className={s.loginPageMain}>
           <div>
             <span>To begin, click your user name</span>
