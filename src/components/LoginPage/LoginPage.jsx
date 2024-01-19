@@ -7,9 +7,19 @@ function ProfileLogin() {
     <>
       <div className={s.ProfileLogin}>
         <img className={s.profileIMG} src="" alt="" width={60} height={60} />
-        <span>Elodie</span>
-        <input type="password" name="" id="loginPassword" />
-        <img src="" alt="" />
+        <div className={s.profileInputs}>
+          <div>
+            <span>Elodie</span>
+          </div>
+          <div>
+            <label for="loginPWD">Type your password</label>
+            <div className={s.inputContainer}>
+              <input type="password" name="loginPWD" id="loginPassword" />
+              <img src="" alt="" width={"32px"} height={"32px"} />
+              <img src="" alt="" width={"32px"} height={"32px"} />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
@@ -59,8 +69,10 @@ function LoginPage() {
             <ButtonOff />
           </div>
           <div>
-            After you log on, you can add or change accounts. <br /> Just go to
-            Control Panel and click User Accounts.
+            <div className={s.textPageBottom}>
+              After you log on, you can add or change accounts. <br /> Just go
+              to Control Panel and click User Accounts.
+            </div>
           </div>
         </div>
       </div>
