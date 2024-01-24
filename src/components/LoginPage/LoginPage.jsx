@@ -8,7 +8,14 @@ function ProfileLogin() {
     <>
       <div className={s.ProfileLogin}>
         <div className={s.profileBG}>
-          <img className={s.profileIMG} src="" alt="" width={60} height={60} />
+          <img
+            className={s.profileIMG}
+            src=""
+            alt=""
+            width={60}
+            height={60}
+            draggable="false"
+          />
           <div className={s.profileInputs}>
             <div>
               <span>Elodie</span>
@@ -16,14 +23,23 @@ function ProfileLogin() {
             <div className={s.profileLabelInputs}>
               <label for="loginPWD">Type your password</label>
               <div className={s.inputContainer}>
-                <input type="password" name="loginPWD" id="loginPassword" />
+                <input
+                  readonly
+                  onfocus="this.removeAttribute('readonly');"
+                  autocomplete="off"
+                  type="password"
+                  name="loginPWD"
+                  id="loginPassword"
+                  draggable="false"
+                />
                 <img
                   src="./images/buttons/btn_switch_user.png"
                   alt=""
                   width={32}
                   height={32}
+                  draggable="false"
                 />
-                <img src="" alt="" width={32} height={32} />
+                <img src="" alt="" width={32} height={32} draggable="false" />
               </div>
             </div>
           </div>
@@ -66,7 +82,11 @@ function LoginPage() {
       <div className={`${s.loginPageComponent} loginPage`}>
         <div className={s.loginPageMain}>
           <div>
-            <img src="./images/logos/windowsXP_whiteLogo.png" alt="" />
+            <img
+              src="./images/logos/windowsXP_whiteLogo.png"
+              alt=""
+              draggable="false"
+            />
             <span>To begin, click your user name</span>
           </div>
           <div>
