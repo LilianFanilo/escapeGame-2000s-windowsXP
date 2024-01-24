@@ -38,12 +38,28 @@ function OfficeFooter() {
     <>
       <footer className={s.bottomBar}>
         <div className={s.bottomBar_menu}>
-          <img src="./images/office/footer_menu_btn.png" alt="" />
+          <img
+            src="./images/office/footer_menu_btn.png"
+            alt=""
+            draggable="false"
+          />
         </div>
         <div className={s.bottomBar_menu_right}>
-          <img src="./images/office/footer_icon_sound.png" alt="" />
-          <img src="./images/office/footer_icon_web.png" alt="" />
-          <img src="./images/office/footer_icon_shield.png" alt="" />
+          <img
+            src="./images/office/footer_icon_sound.png"
+            alt=""
+            draggable="false"
+          />
+          <img
+            src="./images/office/footer_icon_web.png"
+            alt=""
+            draggable="false"
+          />
+          <img
+            src="./images/office/footer_icon_shield.png"
+            alt=""
+            draggable="false"
+          />
           <div></div>
           <div id="clock" className={s.footer_time}>
             {currentTime}
