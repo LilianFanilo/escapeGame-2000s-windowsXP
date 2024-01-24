@@ -6,17 +6,19 @@ function ProfileLogin() {
   return (
     <>
       <div className={s.ProfileLogin}>
-        <img className={s.profileIMG} src="" alt="" width={60} height={60} />
-        <div className={s.profileInputs}>
-          <div>
-            <span>Elodie</span>
-          </div>
-          <div>
-            <label for="loginPWD">Type your password</label>
-            <div className={s.inputContainer}>
-              <input type="password" name="loginPWD" id="loginPassword" />
-              <img src="" alt="" width={"32px"} height={"32px"} />
-              <img src="" alt="" width={"32px"} height={"32px"} />
+        <div className={s.profileBG}>
+          <img className={s.profileIMG} src="" alt="" width={60} height={60} />
+          <div className={s.profileInputs}>
+            <div>
+              <span>Elodie</span>
+            </div>
+            <div className={s.profileLabelInputs}>
+              <label for="loginPWD">Type your password</label>
+              <div className={s.inputContainer}>
+                <input type="password" name="loginPWD" id="loginPassword" />
+                <img src="" alt="" width={"32px"} height={"32px"} />
+                <img src="" alt="" width={"32px"} height={"32px"} />
+              </div>
             </div>
           </div>
         </div>
@@ -58,6 +60,7 @@ function LoginPage() {
       <div className={`${s.loginPageComponent} loginPage`}>
         <div className={s.loginPageMain}>
           <div>
+            <img src="./images/logos/windowsXP_whiteLogo.png" alt="" />
             <span>To begin, click your user name</span>
           </div>
           <div>

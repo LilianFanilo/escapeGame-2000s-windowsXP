@@ -58,8 +58,19 @@
     }
 
     & > div:nth-child(1) {
-      justify-content: flex-end;
+      flex-direction: column;
+      align-items: end;
+      justify-content: center;
       padding-right: 75px;
+
+      img {
+        width: 250px;
+        transform: translate(47px, -30px);
+      }
+
+      span {
+        font-size: 20px;
+      }
     }
 
     & > div:nth-child(2) {
@@ -110,17 +121,61 @@
 
 .ProfileLogin {
   position: relative;
-  background-color: #104a93;
   width: 356px;
-  padding: 15px;
-  display: flex;
-  border: 1px solid white;
-  border-radius: 2.5px 0 0 2.5px;
-  border-right: none;
-  column-gap: 15px;
+  background:
+    radial-gradient(
+        circle at 100% 100%,
+        rgba(12, 24, 97, 0) 0,
+        rgba(12, 24, 97, 0) 3px,
+        transparent 3px
+      )
+      0% 0%/8px 8px no-repeat,
+    radial-gradient(
+        circle at 0 100%,
+        rgba(12, 24, 97, 0) 0,
+        rgba(12, 24, 97, 0) 3px,
+        transparent 3px
+      )
+      100% 0%/8px 8px no-repeat,
+    radial-gradient(
+        circle at 100% 0,
+        rgba(12, 24, 97, 0) 0,
+        rgba(12, 24, 97, 0) 3px,
+        transparent 3px
+      )
+      0% 100%/8px 8px no-repeat,
+    radial-gradient(
+        circle at 0 0,
+        rgba(12, 24, 97, 0) 0,
+        rgba(12, 24, 97, 0) 3px,
+        transparent 3px
+      )
+      100% 100%/8px 8px no-repeat,
+    linear-gradient(rgba(12, 24, 97, 0), rgba(12, 24, 97, 0)) 50% 50% /
+      calc(100% - 10px) calc(100% - 16px) no-repeat,
+    linear-gradient(rgba(12, 24, 97, 0), rgba(12, 24, 97, 0)) 50% 50% /
+      calc(100% - 16px) calc(100% - 10px) no-repeat,
+    linear-gradient(270deg, transparent 0%, #ffffff 100%);
+  border-radius: 2px;
+  padding: 1px;
+  box-sizing: border-box;
+  box-sizing: border-box;
+
+  .profileBG {
+    display: flex;
+    column-gap: 15px;
+    padding: 9px;
+    border-radius: 2px;
+    background: linear-gradient(
+      90deg,
+      rgb(16, 74, 147) 0%,
+      rgba(90, 126, 220, 1) 100%
+    );
+  }
+
   .profileIMG {
-    border-radius: 10px;
-    border: 1px solid white;
+    border-radius: 5px;
+    border: 2px solid #f6ca47;
     box-shadow: 0 0 8px 0 #00309c;
   }
 
@@ -128,17 +183,25 @@
     display: flex;
     flex-direction: column;
 
-    .inputContainer {
+    .profileLabelInputs {
       position: absolute;
-      bottom: 0;
-      transform: translateY(50%);
       display: flex;
-      align-items: center;
-      column-gap: 10px;
-      input {
-        height: 32px;
-        border: none;
-        border-radius: 2px;
+      flex-direction: column;
+      row-gap: 5px;
+      bottom: 0;
+      transform: translateY(20%);
+      label {
+        font-size: 11px;
+      }
+      .inputContainer {
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+        input {
+          height: 32px;
+          border: none;
+          border-radius: 2px;
+        }
       }
     }
   }
