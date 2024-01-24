@@ -77,5 +77,74 @@
         text-shadow: rgba(0, 0, 0, 0.7) 1px 1px;
       }
     }
+
+    .menu {
+      display: flex;
+      margin: 0px 2px;
+      position: relative;
+      border-top: 1px solid rgb(56, 93, 231);
+      box-shadow: rgb(56, 93, 231) 0px 1px;
+
+      .orangeHr {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        display: block;
+        height: 2px;
+        background: linear-gradient(
+          to right,
+          rgba(0, 0, 0, 0) 0%,
+          rgb(218, 136, 74) 50%,
+          rgba(0, 0, 0, 0) 100%
+        );
+        border: 0px;
+      }
+
+      .menuLeft {
+        background-color: rgb(255, 255, 255);
+        padding: 6px 5px 0px;
+        width: 190px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .menuRight {
+        background-color: rgb(203, 227, 255);
+        border-left: 1px solid rgba(58, 58, 255, 0.37);
+        padding: 6px 5px 5px;
+        width: 190px;
+        color: rgb(0, 19, 107);
+      }
+    }
+
+    footer {
+      display: flex;
+      align-self: flex-end;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      color: rgb(255, 255, 255);
+      height: 36px;
+      width: 100%;
+      background: linear-gradient(
+        rgb(66, 130, 214) 0%,
+        rgb(59, 133, 224) 3%,
+        rgb(65, 138, 227) 5%,
+        rgb(65, 138, 227) 17%,
+        rgb(60, 135, 226) 21%,
+        rgb(55, 134, 228) 26%,
+        rgb(52, 130, 227) 29%,
+        rgb(46, 126, 225) 39%,
+        rgb(35, 116, 223) 49%,
+        rgb(32, 114, 219) 57%,
+        rgb(25, 110, 219) 62%,
+        rgb(23, 107, 216) 72%,
+        rgb(20, 104, 213) 75%,
+        rgb(17, 101, 210) 83%,
+        rgb(15, 97, 203) 88%
+      );
+    }
   }
 }

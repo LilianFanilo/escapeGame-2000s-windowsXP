@@ -1,0 +1,11 @@
+.btnLogOffContainer {
+  display: flex;
+  align-items: center;
+  height: fit-content;
+  column-gap: 10px;
+  padding: 5px;
+
+  &:hover {
+    background-color: rgba(60, 80, 210, 0.5);
+  }
+}
