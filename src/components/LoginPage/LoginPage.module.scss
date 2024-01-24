@@ -202,6 +202,15 @@
           border: none;
           border-radius: 2px;
         }
+
+        img {
+          border: 1px solid white;
+          border-radius: 5px;
+
+          &:hover {
+            filter: brightness(1.1);
+          }
+        }
       }
     }
   }

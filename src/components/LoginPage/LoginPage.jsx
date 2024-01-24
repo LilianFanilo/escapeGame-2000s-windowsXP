@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import ButtonOff from "../ButtonOff/ButtonOff";
 import s from "./LoginPage.module.scss";
+import "./LoginPage.scss";
 
 function ProfileLogin() {
   return (
@@ -16,8 +17,13 @@ function ProfileLogin() {
               <label for="loginPWD">Type your password</label>
               <div className={s.inputContainer}>
                 <input type="password" name="loginPWD" id="loginPassword" />
-                <img src="" alt="" width={"32px"} height={"32px"} />
-                <img src="" alt="" width={"32px"} height={"32px"} />
+                <img
+                  src="./images/buttons/btn_switch_user.png"
+                  alt=""
+                  width={32}
+                  height={32}
+                />
+                <img src="" alt="" width={32} height={32} />
               </div>
             </div>
           </div>
@@ -34,15 +40,15 @@ function LoginPage() {
 
       if (keyName === "Enter") {
         let pwd = document.querySelector("#loginPassword").value;
-        const pwdGood = "VJta";
+        const pwdGood = "1234";
         console.log(pwd);
         if (pwd === pwdGood) {
-          console.log("Et vous avez raison !");
+          console.log("Bon mot de passe !");
           let loginPage = document.querySelector(".loginPage");
           console.log(loginPage);
           loginPage.classList.add("is_hidden");
         } else {
-          console.log("Vous me décevez...");
+          console.log("Mauvais mot de passe...");
         }
         return;
       }
