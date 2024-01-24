@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import s from "./OfficeFooter.module.scss";
+import MenuFooter from "./MenuFooter";
 
 function OfficeFooter() {
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
@@ -37,6 +38,7 @@ function OfficeFooter() {
   return (
     <>
       <footer className={s.bottomBar}>
+        <MenuFooter />
         <div className={s.bottomBar_menu}>
           <img
             src="./images/office/footer_menu_btn.png"
