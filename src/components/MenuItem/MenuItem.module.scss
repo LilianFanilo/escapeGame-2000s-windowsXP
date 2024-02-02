@@ -1,0 +1,37 @@
+.MenuItem {
+  height: 34px;
+  padding: 1px;
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-bottom: 4px;
+
+  img {
+    margin-right: 3px;
+    width: 30px;
+    height: 30px;
+  }
+
+  .MenuItem_texts {
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    height: 100%;
+    position: relative;
+
+    .MenuItem_subText {
+      color: rgba(0, 0, 0, 0.4);
+      line-height: 12px;
+      margin-bottom: 1px;
+    }
+  }
+  &:hover {
+    color: white;
+    background-color: rgb(47, 113, 205);
+
+    .MenuItem_subText {
+      color: white;
+    }
+  }
+}
