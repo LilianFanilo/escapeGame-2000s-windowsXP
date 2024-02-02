@@ -5,7 +5,7 @@ import WindowsXP from "./components/WindowsXP/WindowsXP";
 function App() {
   return (
     <>
-      <LoginPage />
+      {/* <LoginPage /> */}
       <WindowsXP />
     </>
   );
