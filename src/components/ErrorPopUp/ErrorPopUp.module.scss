@@ -6,6 +6,7 @@
   width: 380px;
   height: auto;
   z-index: 28;
+  font-family: Tahoma, "Noto Sans", sans-serif;
 
   .header_bg {
     background: linear-gradient(rgb(0, 88, 238) 0%, rgb(53, 147, 255) 4%, rgb(40, 142, 255) 6%, rgb(18, 125, 255) 8%, rgb(3, 111, 252) 10%, rgb(2, 98, 238) 14%, rgb(0, 87, 229) 20%, rgb(0, 84, 227) 24%, rgb(0, 85, 235) 56%, rgb(0, 91, 245) 66%, rgb(2, 106, 254) 76%, rgb(0, 98, 239) 86%, rgb(0, 82, 214) 92%, rgb(0, 64, 171) 94%, rgb(0, 48, 146) 100%);
@@ -70,6 +71,10 @@
         height: 22px;
         border: 1px solid rgb(255, 255, 255);
         border-radius: 3px;
+      }
+
+      .window_button:hover {
+        filter: brightness(120%);
       }
 
       .window_button::before {
@@ -148,6 +153,9 @@
           .error_confirm {
             line-height: 11px;
           }
+        }
+        .error_button:hover {
+          box-shadow: black 1px 1px 1px inset;
         }
       }
     }
