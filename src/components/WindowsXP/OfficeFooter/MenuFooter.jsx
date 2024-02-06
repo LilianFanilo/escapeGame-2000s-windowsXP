@@ -1,10 +1,9 @@
-import ButtonLogOff from "../../ButtonLogOff/ButtonLogOff";
-import ButtonOff from "../../ButtonOff/ButtonOff";
 import ErrorPopUp from "../../ErrorPopUp/ErrorPopUp";
 import MenuItem from "../../MenuItem/MenuItem";
 import s from "./MenuFooter.module.scss";
 import sound from "../../../assets/sounds/error.wav";
 import { useRef, useState } from "react";
+import ButtonSystem from "../../ButtonSystem/ButtonSystem";
 
 function MenuFooter() {
   const [componentToShow, setComponentToShow] = useState(null);
@@ -84,8 +83,16 @@ function MenuFooter() {
             <div className={s.menuRight}></div>
           </section>
           <footer>
-            <ButtonLogOff />
-            <ButtonOff />
+            <ButtonSystem
+              size="small"
+              img="/images/buttons/btn_log_off.png"
+              text="Log Off"
+            />
+            <ButtonSystem
+              size="small"
+              img="/images/buttons/btn_off_icon.png"
+              text="Turn Off Computer"
+            />
           </footer>
         </div>
         {isVisible && componentToShow}

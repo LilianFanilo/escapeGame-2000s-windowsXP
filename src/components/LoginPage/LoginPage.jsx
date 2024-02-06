@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import ButtonOff from "../ButtonOff/ButtonOff";
 import s from "./LoginPage.module.scss";
 import "./LoginPage.scss";
+import ButtonSystem from "../ButtonSystem/ButtonSystem";
 
 function ProfileLogin() {
   return (
@@ -95,7 +96,11 @@ function LoginPage() {
         </div>
         <div className={s.loginPageBottom}>
           <div>
-            <ButtonOff />
+            <ButtonSystem
+              size="big"
+              img="/images/buttons/btn_off_icon.png"
+              text="Turn off the computer"
+            />
           </div>
           <div>
             <div className={s.textPageBottom}>
