@@ -20,15 +20,17 @@ function MenuFooter() {
   const handleMenuItemClick = (itemName) => {
     playClickSound();
     setIsVisible(true);
-  
+
     // Logique pour définir le composant à afficher en fonction de l'itemName
     if (itemName === "Internet") {
-      setComponentToShow(<ErrorPopUp className={s.center} onClose={() => setIsVisible(false)}/>);
+      setComponentToShow(
+        <ErrorPopUp className={s.center} onClose={() => setIsVisible(false)} />,
+      );
     } else {
       // Gérez d'autres cas ici
     }
   };
-  
+
   return (
     <>
       <div className={s.MenuFooter}>

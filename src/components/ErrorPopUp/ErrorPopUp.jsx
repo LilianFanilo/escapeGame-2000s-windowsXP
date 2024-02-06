@@ -1,5 +1,5 @@
 import { useState } from "react";
-import s from "./ErrorPopUp.module.scss"
+import s from "./ErrorPopUp.module.scss";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
 
@@ -21,16 +21,18 @@ export default function ErrorPopUp({ onClose }) {
         <div className={s.window}>
           <div className={s.header_bg}></div>
           <div className={s.window_header}>
-          <img
-            draggable="false"
-            src={error}
-            className={s.window_header_icon}
-            alt=""
-          />
+            <img
+              draggable="false"
+              src={error}
+              className={s.window_header_icon}
+              alt=""
+            />
             <div className={s.window_header_title}>C:\</div>
             <div className={s.window_close}>
-              <button className={s.window_button} onClick={handleConfirmClick}>
-              </button>
+              <button
+                className={s.window_button}
+                onClick={handleConfirmClick}
+              ></button>
             </div>
           </div>
           <div className={s.window_content}>
@@ -57,5 +59,5 @@ export default function ErrorPopUp({ onClose }) {
         </div>
       )}
     </>
-  )
+  );
 }
