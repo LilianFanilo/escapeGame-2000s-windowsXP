@@ -21,7 +21,7 @@ function ProfileLogin() {
               <span>Elodie</span>
             </div>
             <div className={s.profileLabelInputs}>
-              <label for="loginPWD">Type your password</label>
+              <label for="loginPWD">Taper votre mot de passe</label>
               <div className={s.inputContainer}>
                 <input
                   readonly
@@ -87,7 +87,7 @@ function LoginPage() {
               alt=""
               draggable="false"
             />
-            <span>To begin, click your user name</span>
+            <span>Clicker sur votre compte</span>
           </div>
           <div>
             <ProfileLogin />
@@ -98,13 +98,14 @@ function LoginPage() {
             <ButtonSystem
               size="big"
               img="/images/buttons/btn_off_icon.png"
-              text="Turn off the computer"
+              text="Éteindre le PC"
             />
           </div>
           <div>
             <div className={s.textPageBottom}>
-              After you log on, you can add or change accounts. <br /> Just go
-              to Control Panel and click User Accounts.
+              Après avoir ouvert une session, vous pouvez ajouter ou modifier
+              des comptes. <br /> Allez simplement dans le panneau de
+              configuration et cliquez sur Comptes d’utilisateur.
             </div>
           </div>
         </div>

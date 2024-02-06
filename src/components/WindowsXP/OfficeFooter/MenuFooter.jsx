@@ -156,12 +156,12 @@ function MenuFooter() {
             <ButtonSystem
               size="small"
               img="/images/buttons/btn_log_off.png"
-              text="Log Off"
+              text="Déconnexion"
             />
             <ButtonSystem
               size="small"
               img="/images/buttons/btn_off_icon.png"
-              text="Turn Off Computer"
+              text="Éteindre le PC"
             />
           </footer>
         </div>
