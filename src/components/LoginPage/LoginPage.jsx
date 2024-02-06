@@ -3,7 +3,80 @@ import s from "./LoginPage.module.scss";
 import "./LoginPage.scss";
 import ButtonSystem from "../ButtonSystem/ButtonSystem";
 
-function ProfileLogin() {
+function LoginPage() {
+  let pwdError = 0;
+
+  useEffect(() => {
+    const handleKeyPress = (event) => {
+      const keyName = event.key;
+
+      if (keyName === "Enter") {
+        let pwd = document.querySelector("#loginPassword").value;
+        const pwdGood = "1234";
+        console.log(pwd);
+        if (pwd === pwdGood) {
+          console.log("Bon mot de passe !");
+          let loginPage = document.querySelector(".loginPage");
+          loginPage.classList.add("is_hidden");
+        } else {
+          console.log("Mauvais mot de passe...");
+          pwdError += 1;
+          console.log(pwdError);
+        }
+
+        if (pwdError >= 5) {
+          let pwdHint = document.querySelector(".pwdHint");
+          pwdHint.classList.add("is_visible");
+        }
+        return;
+      }
+    };
+
+    document.addEventListener("keypress", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keypress", handleKeyPress);
+    };
+  }, []);
+
+  return (
+    <>
+      <div className={`${s.loginPageComponent} loginPage`}>
+        <div className={s.loginPageMain}>
+          <div>
+            <img
+              src="./images/logos/windowsXP_whiteLogo.png"
+              alt=""
+              draggable="false"
+            />
+            <span>Clicker sur votre compte</span>
+          </div>
+          <div>
+            <ProfileLogin pwdErrorTrigger={pwdError} />
+          </div>
+        </div>
+        <div className={s.loginPageBottom}>
+          <div>
+            <ButtonSystem
+              size="big"
+              img="/images/buttons/btn_off_icon.png"
+              text="Éteindre le PC"
+            />
+          </div>
+          <div>
+            <div className={s.textPageBottom}>
+              Après avoir ouvert une session, vous pouvez ajouter ou modifier
+              des comptes. <br /> Allez simplement dans le panneau de
+              configuration et cliquez sur Comptes d’utilisateur.
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+}
+
+function ProfileLogin(props) {
   return (
     <>
       <div className={s.ProfileLogin}>
@@ -41,71 +114,7 @@ function ProfileLogin() {
                 />
                 <img src="" alt="" width={32} height={32} draggable="false" />
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-}
-
-function LoginPage() {
-  useEffect(() => {
-    const handleKeyPress = (event) => {
-      const keyName = event.key;
-
-      if (keyName === "Enter") {
-        let pwd = document.querySelector("#loginPassword").value;
-        const pwdGood = "1234";
-        console.log(pwd);
-        if (pwd === pwdGood) {
-          console.log("Bon mot de passe !");
-          let loginPage = document.querySelector(".loginPage");
-          console.log(loginPage);
-          loginPage.classList.add("is_hidden");
-        } else {
-          console.log("Mauvais mot de passe...");
-        }
-        return;
-      }
-    };
-
-    document.addEventListener("keypress", handleKeyPress);
-
-    return () => {
-      document.removeEventListener("keypress", handleKeyPress);
-    };
-  }, []);
-
-  return (
-    <>
-      <div className={`${s.loginPageComponent} loginPage`}>
-        <div className={s.loginPageMain}>
-          <div>
-            <img
-              src="./images/logos/windowsXP_whiteLogo.png"
-              alt=""
-              draggable="false"
-            />
-            <span>Clicker sur votre compte</span>
-          </div>
-          <div>
-            <ProfileLogin />
-          </div>
-        </div>
-        <div className={s.loginPageBottom}>
-          <div>
-            <ButtonSystem
-              size="big"
-              img="/images/buttons/btn_off_icon.png"
-              text="Éteindre le PC"
-            />
-          </div>
-          <div>
-            <div className={s.textPageBottom}>
-              Après avoir ouvert une session, vous pouvez ajouter ou modifier
-              des comptes. <br /> Allez simplement dans le panneau de
-              configuration et cliquez sur Comptes d’utilisateur.
+              <div className="pwdHint">NUL NUL NUL!!!</div>
             </div>
           </div>
         </div>

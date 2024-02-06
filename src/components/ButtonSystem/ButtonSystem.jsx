@@ -1,14 +1,12 @@
 import s from "./ButtonSystem.module.scss";
 
 function ButtonSystem(props) {
-  let buttonSize = ""; // Initialisez la classe à une chaîne vide par défaut
+  let buttonSize = "";
 
   if (props.size === "big") {
-    console.log("One component is big");
-    buttonSize = s.ButtonSystemBig; // Utilisez la classe CSS module correspondante pour "big"
+    buttonSize = s.ButtonSystemBig;
   } else if (props.size === "small") {
-    console.log("One component is small");
-    buttonSize = s.ButtonSystemSmall; // Utilisez la classe CSS module correspondante pour "small"
+    buttonSize = s.ButtonSystemSmall;
   }
 
   return (
