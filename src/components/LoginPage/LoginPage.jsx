@@ -83,7 +83,7 @@ function ProfileLogin(props) {
         <div className={s.profileBG}>
           <img
             className={s.profileIMG}
-            src=""
+            src="/images/login_page/profile_img.png"
             alt=""
             width={60}
             height={60}
