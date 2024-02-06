@@ -87,56 +87,68 @@ function MenuFooter() {
                 itemImg="/images/menu_items/documents.png"
                 itemName="My Documents"
                 isBold
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/recent_documents.png"
                 itemName="My Recent Documents"
                 isBold
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/pictures.png"
                 itemName="My Pictures"
                 isBold
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/music.png"
                 itemName="My Music"
                 isBold
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/computer.png"
                 itemName="My Computer"
                 isBold
+                smallSize
               />
               <div className={s.MenuItem_separator}></div>
               <MenuItem
                 itemImg="/images/menu_items/control_panel.png"
                 itemName="Control Panel"
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/program_access.png"
                 itemName="Set Program Access and Defaults"
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/network.png"
                 itemName="Connect To"
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/printers.png"
                 itemName="Printers and Taxes"
+                smallSize
               />
               <div className={s.MenuItem_separator}></div>
               <MenuItem
                 itemImg="/images/menu_items/help.png"
                 itemName="Help and Support"
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/search.png"
                 itemName="Search"
+                smallSize
               />
               <MenuItem
                 itemImg="/images/menu_items/cmd.png"
                 itemName="Run..."
+                smallSize
               />
             </div>
           </section>
