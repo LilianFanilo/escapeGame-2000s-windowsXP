@@ -45,12 +45,14 @@ function MenuFooter() {
                 itemImg="/images/menu_items/internet.png"
                 itemName="Internet"
                 itemSubName="Internet Explorer"
+                isBold
               />
               <div onClick={() => handleMenuItemClick("Internet")}>
                 <MenuItem
                   itemImg="/images/menu_items/email.png"
                   itemName="E-mail"
                   itemSubName="Outlook Express"
+                  isBold
                 />
               </div>
               <div className={s.MenuItem_separator}></div>
@@ -80,7 +82,63 @@ function MenuFooter() {
               />
             </div>
             <audio ref={audioRef} src={sound} />
-            <div className={s.menuRight}></div>
+            <div className={s.menuRight}>
+              <MenuItem
+                itemImg="/images/menu_items/documents.png"
+                itemName="My Documents"
+                isBold
+              />
+              <MenuItem
+                itemImg="/images/menu_items/recent_documents.png"
+                itemName="My Recent Documents"
+                isBold
+              />
+              <MenuItem
+                itemImg="/images/menu_items/pictures.png"
+                itemName="My Pictures"
+                isBold
+              />
+              <MenuItem
+                itemImg="/images/menu_items/music.png"
+                itemName="My Music"
+                isBold
+              />
+              <MenuItem
+                itemImg="/images/menu_items/computer.png"
+                itemName="My Computer"
+                isBold
+              />
+              <div className={s.MenuItem_separator}></div>
+              <MenuItem
+                itemImg="/images/menu_items/control_panel.png"
+                itemName="Control Panel"
+              />
+              <MenuItem
+                itemImg="/images/menu_items/program_access.png"
+                itemName="Set Program Access and Defaults"
+              />
+              <MenuItem
+                itemImg="/images/menu_items/network.png"
+                itemName="Connect To"
+              />
+              <MenuItem
+                itemImg="/images/menu_items/printers.png"
+                itemName="Printers and Taxes"
+              />
+              <div className={s.MenuItem_separator}></div>
+              <MenuItem
+                itemImg="/images/menu_items/help.png"
+                itemName="Help and Support"
+              />
+              <MenuItem
+                itemImg="/images/menu_items/search.png"
+                itemName="Search"
+              />
+              <MenuItem
+                itemImg="/images/menu_items/cmd.png"
+                itemName="Run..."
+              />
+            </div>
           </section>
           <footer>
             <ButtonSystem

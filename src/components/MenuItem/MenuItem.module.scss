@@ -20,6 +20,10 @@
     height: 100%;
     position: relative;
 
+    &.MenuItem_Bold > div:nth-child(1) {
+      font-weight: 700;
+    }
+
     .MenuItem_subText {
       color: rgba(0, 0, 0, 0.4);
       line-height: 12px;
