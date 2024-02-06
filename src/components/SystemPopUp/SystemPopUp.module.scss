@@ -1,0 +1,83 @@
+.SystemPopUp {
+  position: fixed;
+  display: flex;
+  inset: 0px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  z-index: 10;
+
+  .modal {
+    margin-top: 30vh;
+    width: 300px;
+    height: 190px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+
+    header {
+      height: 42px;
+      display: flex;
+      padding-left: 10px;
+      -webkit-box-align: center;
+      align-items: center;
+      background: rgb(9, 33, 120);
+
+      span {
+        font-size: 17px;
+        font-family: "Noto Sans";
+        color: rgb(255, 255, 255);
+        flex: 1 1 0%;
+      }
+
+      img {
+        width: auto;
+        height: 30px;
+        margin-right: 5px;
+      }
+    }
+
+    .content {
+      flex: 1 1 0%;
+      background: linear-gradient(
+        to right,
+        rgb(51, 73, 224) 0%,
+        rgb(97, 126, 230) 47%,
+        rgb(97, 126, 230) 53%,
+        rgb(51, 73, 224) 100%
+      );
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      justify-content: space-around;
+      padding: 0px 30px;
+      position: relative;
+    }
+
+    footer {
+      height: 42px;
+      background: rgb(9, 33, 120);
+      display: flex;
+      -webkit-box-pack: end;
+      justify-content: flex-end;
+      -webkit-box-align: center;
+      align-items: center;
+
+      button {
+        font-size: 11px;
+        padding: 0px 8px;
+        line-height: 10px;
+        background: rgb(240, 240, 240);
+        margin-right: 10px;
+        height: 16px;
+        border-radius: 1px;
+        box-shadow:
+          rgb(0, 5, 176) 2px 2px 4px 1px,
+          white 2px 2px 2px 0px,
+          skyblue 0px 0px 0px 1px inset,
+          skyblue 2px -2px inset;
+        border: none;
+        outline: none;
+      }
+    }
+  }
+}
