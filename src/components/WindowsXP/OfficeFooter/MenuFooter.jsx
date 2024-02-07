@@ -16,18 +16,10 @@ function MenuFooter() {
     });
   };
 
-  const handleMenuItemClick = (itemName) => {
+  const handleMenuItemClick = () => {
     playClickSound();
     setIsVisible(true);
-
-    // Logique pour définir le composant à afficher en fonction de l'itemName
-    if (itemName === "Internet") {
-      setComponentToShow(
-        <ErrorPopUp className={s.center} onClose={() => setIsVisible(false)} />,
-      );
-    } else {
-      // Gérez d'autres cas ici
-    }
+    setComponentToShow(<ErrorPopUp onClose={() => setIsVisible(false)} />);
   };
 
   return (
@@ -41,13 +33,14 @@ function MenuFooter() {
           <section className={s.menu}>
             <hr className={s.orangeHr} />
             <div className={s.menuLeft}>
-              <MenuItem
-                itemImg="/images/menu_items/internet.png"
-                itemName="Internet"
-                itemSubName="Internet Explorer"
-                isBold
-              />
-              <div onClick={() => handleMenuItemClick("Internet")}>
+              <div onClick={handleMenuItemClick}>
+                <MenuItem
+                  itemImg="/images/menu_items/internet.png"
+                  itemName="Internet"
+                  itemSubName="Internet Explorer"
+                />
+              </div>
+              <div onClick={handleMenuItemClick}>
                 <MenuItem
                   itemImg="/images/menu_items/email.png"
                   itemName="E-mail"

@@ -9,7 +9,6 @@ function WindowsXP() {
       <div className={s.windowsXP}>
         <OfficeFooter />
       </div>
-      <ErrorPopUp />
       <Notepad />
     </>
   );

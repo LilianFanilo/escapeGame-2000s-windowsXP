@@ -1,12 +1,23 @@
 .window {
   position: absolute;
+  display: flex;
+  padding: 3px;
+  flex-direction: column;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 380px;
   height: auto;
-  z-index: 28;
+  z-index: 5;
   font-family: Tahoma, "Noto Sans", sans-serif;
+  background-color: rgb(8, 49, 217);
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  .header_top {
+    width: inherit;
+    height: 300px;
+  }
 
   .header_bg {
     background: linear-gradient(
@@ -41,9 +52,7 @@
     display: flex;
     height: 25px;
     line-height: 25px;
-    font-weight: 700;
     font-size: 12px;
-    font-family: "Noto Sans";
     text-shadow: rgb(0, 0, 0) 1px 1px;
     color: white;
     position: absolute;
@@ -152,6 +161,7 @@
 
           .error_message {
             line-height: 16px;
+            margin: 0;
           }
         }
       }
