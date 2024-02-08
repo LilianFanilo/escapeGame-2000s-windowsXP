@@ -5,8 +5,9 @@
   transform: translate(-50%, -50%);
   background: url(../../../../../public/images/blog/bg/blog_bg.png);
   width: 90%;
-  height: auto;
+  height: 90%;
   display: flex;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 
   .blog_left {
     padding: 10px;
@@ -15,5 +16,32 @@
   .blog_center {
     width: 60%;
     height: auto;
+  }
+
+  .blog_right {
+    .input_global {
+      display: flex;
+      background-color: #b49fdb;
+      border: 2px solid #000000;
+      // padding: 10px;
+      box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    }
+    input {
+      color: #ffffff;
+      padding: 10px;
+      border: none;
+      outline: 0;
+      background-color: transparent;
+    }
+    input::placeholder {
+      color: #ffffff;
+    }
+    .search {
+      padding: 5px;
+      background-color: #e905d2;
+      align-items: center;
+      width: 32px;
+      height: auto;
+    }
   }
 }
