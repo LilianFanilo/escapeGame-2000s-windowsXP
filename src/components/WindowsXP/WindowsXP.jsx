@@ -2,6 +2,7 @@ import s from "./WindowsXP.module.scss";
 import OfficeFooter from "./OfficeFooter/OfficeFooter";
 import Notepad from "./apps/Notepad/Notepad";
 import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
+import Blog from "./apps/Blog/Blog";
 
 function WindowsXP() {
   return (
@@ -10,6 +11,7 @@ function WindowsXP() {
         <OfficeFooter />
       </div>
       <Notepad />
+      <Blog />
     </>
   );
 }
