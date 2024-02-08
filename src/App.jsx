@@ -8,7 +8,7 @@ function App() {
     <>
       <WindowsXP />
       <LoginPage />
-      {/* <SystemPopUp /> */}
+      <SystemPopUp />
     </>
   );
 }
