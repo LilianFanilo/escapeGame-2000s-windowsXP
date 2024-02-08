@@ -9,5 +9,15 @@
 .pwdHint {
   display: none;
   position: absolute;
-  bottom: -25px;
+  top: 21px;
+}
+
+.pwdError {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.pwdContainer {
+  position: relative;
 }

@@ -7,35 +7,46 @@ function LoginPage() {
   let pwdError = 0;
 
   useEffect(() => {
+    let accessOffice = document.getElementById("accessOffice");
+    console.log(accessOffice);
+
     const handleKeyPress = (event) => {
       const keyName = event.key;
 
       if (keyName === "Enter") {
-        let pwd = document.querySelector("#loginPassword").value;
-        const pwdGood = "1234";
-        console.log(pwd);
-        if (pwd === pwdGood) {
-          console.log("Bon mot de passe !");
-          let loginPage = document.querySelector(".loginPage");
-          loginPage.classList.add("is_hidden");
-        } else {
-          console.log("Mauvais mot de passe...");
-          pwdError += 1;
-          console.log(pwdError);
-        }
-
-        if (pwdError >= 5) {
-          let pwdHint = document.querySelector(".pwdHint");
-          pwdHint.classList.add("is_visible");
-        }
+        PwdVerification();
         return;
       }
     };
 
+    const PwdVerification = () => {
+      let pwd = document.querySelector("#loginPassword").value;
+      const pwdGood = "1234";
+      console.log(pwd);
+      if (pwd === pwdGood) {
+        console.log("Bon mot de passe !");
+        let loginPage = document.querySelector(".loginPage");
+        loginPage.classList.add("is_hidden");
+      } else {
+        console.log("Mauvais mot de passe...");
+        pwdError += 1;
+        console.log(pwdError);
+        let pwdErrorDisplay = document.querySelector(".pwdError");
+        pwdErrorDisplay.classList.add("is_visible");
+      }
+
+      if (pwdError >= 5) {
+        let pwdHint = document.querySelector(".pwdHint");
+        pwdHint.classList.add("is_visible");
+      }
+    };
+
     document.addEventListener("keypress", handleKeyPress);
+    accessOffice.addEventListener("click", PwdVerification);
 
     return () => {
       document.removeEventListener("keypress", handleKeyPress);
+      accessOffice.removeEventListener("click", PwdVerification);
     };
   }, []);
 
@@ -106,6 +117,7 @@ function ProfileLogin(props) {
                   draggable="false"
                 />
                 <img
+                  id="accessOffice"
                   src="./images/buttons/btn_switch_user.png"
                   alt=""
                   width={32}
@@ -114,7 +126,10 @@ function ProfileLogin(props) {
                 />
                 <img src="" alt="" width={32} height={32} draggable="false" />
               </div>
-              <div className="pwdHint">NUL NUL NUL!!!</div>
+              <div className="pwdContainer">
+                <div className="pwdError">Mauvais mot de passe...</div>
+                <div className="pwdHint">Indice : Remets-toi en question</div>
+              </div>
             </div>
           </div>
         </div>
