@@ -56,7 +56,7 @@ function LoginPage() {
         <div className={s.loginPageMain}>
           <div>
             <img
-              src="./images/logos/windowsXP_whiteLogo.png"
+              src="./images/login_page/login_page_logo.png"
               alt=""
               draggable="false"
             />
@@ -124,7 +124,13 @@ function ProfileLogin(props) {
                   height={32}
                   draggable="false"
                 />
-                <img src="" alt="" width={32} height={32} draggable="false" />
+                <img
+                  src="./images/buttons/btn_support.png"
+                  alt=""
+                  width={32}
+                  height={32}
+                  draggable="false"
+                />
               </div>
               <div className="pwdContainer">
                 <div className="pwdError">Mauvais mot de passe...</div>

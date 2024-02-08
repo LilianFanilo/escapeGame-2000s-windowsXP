@@ -1,4 +1,6 @@
 $login-green: #b8ea9d;
+$login-pink: #e905d2;
+$login-gray: #f4f4f4;
 
 .loginPageComponent {
   display: flex;
@@ -11,13 +13,12 @@ $login-green: #b8ea9d;
   width: 100vw;
   height: 100vh;
   background-color: $login-green;
-  color: white;
 
   .loginPageMain {
     display: flex;
     position: relative;
-    background: #5a7edc
-      radial-gradient(ellipse 25% 100% at top left, white, transparent);
+    background: $login-pink
+      radial-gradient(ellipse 100% 175% at bottom right, white, transparent);
     width: 100%;
     height: 70%;
 
@@ -28,11 +29,7 @@ $login-green: #b8ea9d;
       top: 0;
       width: 100%;
       height: 4px;
-      background: radial-gradient(
-        ellipse 40% 100% at center,
-        white,
-        transparent
-      );
+      background-color: white;
       transform: translateY(-100%);
     }
 
@@ -43,11 +40,7 @@ $login-green: #b8ea9d;
       bottom: 0;
       width: 100%;
       height: 4px;
-      background: radial-gradient(
-        ellipse 60% 100% at center,
-        #e18e39,
-        transparent
-      );
+      background-color: white;
       transform: translateY(100%);
     }
 
@@ -83,14 +76,15 @@ $login-green: #b8ea9d;
         display: block;
         position: absolute;
         left: 0;
-        height: 70%;
-        width: 2px;
+        height: 80%;
+        width: 4px;
         background: radial-gradient(
-          ellipse 100% 60% at center,
-          white,
-          transparent
+          ellipse 100% 40% at center,
+          black,
+          rgba(0, 0, 0, 0.5)
         );
         transform: translateX(-50%);
+        border-radius: 20px;
       }
     }
   }
@@ -158,7 +152,7 @@ $login-green: #b8ea9d;
       calc(100% - 10px) calc(100% - 16px) no-repeat,
     linear-gradient(rgba(12, 24, 97, 0), rgba(12, 24, 97, 0)) 50% 50% /
       calc(100% - 16px) calc(100% - 10px) no-repeat,
-    linear-gradient(270deg, transparent 0%, #ffffff 100%);
+    linear-gradient(270deg, transparent 0%, rgb(57, 57, 57) 100%);
   border-radius: 2px;
   padding: 1px;
   box-sizing: border-box;
@@ -171,15 +165,9 @@ $login-green: #b8ea9d;
     border-radius: 2px;
     background: linear-gradient(
       90deg,
-      rgb(16, 74, 147) 0%,
-      rgba(90, 126, 220, 1) 100%
+      $login-gray 0%,
+      rgba(255, 255, 255, 0) 100%
     );
-  }
-
-  .profileIMG {
-    border-radius: 5px;
-    border: 2px solid #f6ca47;
-    box-shadow: 0 0 8px 0 #00309c;
   }
 
   .profileInputs {
@@ -203,11 +191,10 @@ $login-green: #b8ea9d;
         input {
           height: 32px;
           border: none;
-          border-radius: 2px;
+          border: 1px solid black;
         }
 
         img {
-          border: 1px solid white;
           border-radius: 5px;
 
           &:hover {
