@@ -21,7 +21,7 @@ function LoginPage() {
 
     const PwdVerification = () => {
       let pwd = document.querySelector("#loginPassword").value;
-      const pwdGood = "1234";
+      const pwdGood = "021208";
       console.log(pwd);
       if (pwd === pwdGood) {
         console.log("Bon mot de passe !");
