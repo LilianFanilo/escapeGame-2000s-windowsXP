@@ -7,8 +7,8 @@ function App() {
   return (
     <>
       <WindowsXP />
-      <LoginPage />
-      <SystemPopUp />
+      {/* <LoginPage /> */}
+      {/* <SystemPopUp /> */}
     </>
   );
 }
