@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
 .blog {
   position: absolute;
   top: 50%;
@@ -5,20 +8,98 @@
   transform: translate(-50%, -50%);
   background: url(../../../../../public/images/blog/bg/blog_bg.png);
   width: 90%;
-  height: 90%;
+  height: auto;
+  overflow-y: scroll;
   display: flex;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', sans-serif;
+  font-weight: 100;
 
   .blog_left {
+    width: 20%;
     padding: 10px;
   }
 
   .blog_center {
     width: 60%;
     height: auto;
+    color: #ffffff;
+
+    .title {
+      color: #000000;
+      font-size: 1em;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Red Rose', serif;
+    }
+
+    header {
+
+      ul {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        border: 4px solid #E905D2;
+        padding: 12px 14px;
+        border-radius: 5px 5px 0 0;
+      }
+
+      li:nth-child(2) {
+        color: #0000FF;
+        background-color: #F0BCD6;
+      }
+    }
+
+    .darkpink_border {
+      border: 8px solid #E905D2;
+      width: 100%;
+      height: 100%;
+
+      .lightpink_border {
+        background-color: #ed8fe4;
+        border: 12px solid #ed8fe4;
+        width: 100%;
+        height: 100%;
+
+        .comment_header {
+          background-color: #EC70A0;
+          margin: 0;
+          padding: 12px;
+          border-radius: 5px 5px 0 0;
+        }
+        .comment_main {
+          background-color: #8a92de;
+          margin: 0;
+          padding: 15px;
+          border-radius: 0 0 5px 5px;
+        }
+
+        span {
+          color: #0000FF;
+        }
+
+        .comment {
+          display: flex;
+          flex-direction: row-reverse;
+          padding-top: 15px;
+          padding-right: 10px;
+
+          img {
+            width: 37px;
+            height: 32px;
+          }
+        }
+      }
+    }
   }
 
   .blog_right {
+    width: 20%;
+    
     .input_global {
       display: flex;
       background-color: #b49fdb;
