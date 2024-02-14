@@ -17,15 +17,55 @@ export default function Blog() {
     <>
       <div className={s.blog}>
         <div className={s.blog_left}>
-          <img src="images/blog/blog_left/logo.png" alt="" draggable="false" />
+          <img
+            src="images/blog/blog_left/logo.png"
+            alt=""
+            className={s.logo}
+            draggable="false"
+          />
+          <img
+            src="images/blog/blog_left/jewel01.png"
+            alt=""
+            className={s.jewel01}
+            draggable="false"
+          />
           <img
             src="images/blog/blog_left/britney.jpg"
             alt=""
+            className={s.britney}
+            draggable="false"
+          />
+          <img
+            src="images/blog/blog_left/jewel02.png"
+            alt=""
+            className={s.jewel02}
             draggable="false"
           />
           <img
             src="images/blog/blog_left/image02.jpg"
             alt=""
+            className={s.image02}
+            draggable="false"
+          />
+          <img
+            src="images/blog/blog_left/jewel03.png"
+            alt=""
+            className={s.jewel03}
+            draggable="false"
+          />
+          <div className={s.prefs}>
+            <h3>Mes trucs prefs'</h3>
+            <p>
+              <span>Parle à ma main - FatalBazouca</span>
+            </p>
+            <p>Série - Big Bang Theory</p>
+            <p>Film - N’oublie jamais</p>
+            <p>Célébrité - Ryan Golsing</p>
+          </div>
+          <img
+            src="images/blog/blog_left/jewel04.png"
+            alt=""
+            className={s.jewel04}
             draggable="false"
           />
         </div>

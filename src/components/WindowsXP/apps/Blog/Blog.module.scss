@@ -39,6 +39,78 @@
   .blog_left {
     width: 20%;
     padding: 10px;
+
+    .logo {
+      padding-top: 20px;
+      width: 218px;
+      height: auto;
+    }
+
+    .jewel01 {
+      width: 75px;
+      height: 72px;
+      position: absolute;
+      left: 1%;
+      top: 12%;
+      transform: translateY(-12%, 1%);
+    }
+
+    .britney {
+      padding-top: 30px;
+    }
+
+    .jewel02 {
+      width: 75px;
+      height: 72px;
+      position: absolute;
+      left: 1%;
+      top: 12%;
+      transform: translateY(-12%, 1%);
+    }
+
+    .image02 {
+      padding: 40px 0;
+    }
+
+    .jewel03 {
+      width: 75px;
+      height: 72px;
+      position: absolute;
+      left: 1%;
+      top: 12%;
+      transform: translateY(-12%, 1%);
+    }
+
+    .prefs {
+      background: url(/images/blog/blog_left/image03.jpg);
+      background-repeat: no-repeat;
+      object-fit: cover;
+
+      h3 {
+        text-align: center;
+        color: #ffffff;
+        padding: 20px;
+      }
+
+      p {
+        color: #ffffff;
+        padding: 20px 10px;
+        font-size: 0.9em;
+      }
+
+      span {
+        color: #0000ff;
+      }
+    }
+
+    .jewel04 {
+      width: 75px;
+      height: 72px;
+      position: absolute;
+      left: 1%;
+      top: 12%;
+      transform: translateY(-12%, 1%);
+    }
   }
 
   .blog_center {
@@ -92,12 +164,13 @@
       li {
         border: 4px solid #e905d2;
         padding: 12px 14px;
+        color: #0000ff;
         border-radius: 15px 15px 0 0;
         cursor: pointer;
       }
 
       li.active {
-        color: #0000ff;
+        color: #ffffff;
         background: url(/images/blog/blog_center/money.jpg);
       }
     }
@@ -178,6 +251,8 @@
 
         .video {
           padding: 50px 50px 0 50px;
+          transition: all 0.2s ease-in-out;
+          cursor: pointer;
 
           p {
             text-align: center;
@@ -185,6 +260,11 @@
             font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
               "Lucida Sans", Arial, sans-serif;
           }
+        }
+
+        &:hover {
+          transform: scale(1.5);
+          cursor: pointer;
         }
       }
     }
