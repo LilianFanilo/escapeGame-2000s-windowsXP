@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import s from "./Blog.module.scss";
 
 export default function Blog() {
@@ -12,6 +12,15 @@ export default function Blog() {
   const handleSectionClick = (section) => {
     setActiveSection(section);
   };
+
+  function loadVideo(videoSrc) {
+    var videoPlayer = document.getElementById("videoPlayer");
+    var videoSource = document.getElementById("videoSource");
+
+    videoSource.src = videoSrc;
+    videoPlayer.load();
+    videoPlayer.style.display = "block";
+  }
 
   return (
     <>
@@ -190,7 +199,10 @@ export default function Blog() {
           {activeSection === "Galerie" && (
             <div className={s.darkpink_border}>
               <div className={s.gallery}>
-                <div className={s.video}>
+                <div
+                  className={s.video}
+                  onClick={() => loadVideo("video_001.mp4")}
+                >
                   <img
                     src="images/blog/blog_center/video_thumbnail_01.png"
                     alt="Video 001"
@@ -303,19 +315,59 @@ export default function Blog() {
                   <p>vidéo 014</p>
                 </div>
               </div>
+              <video
+                id="videoPlayer"
+                controls
+                style={{ display: "none" }}
+                className={s.video_on}
+              >
+                <source
+                  id="videoSource"
+                  src="/videos/video_001.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </div>
           )}
         </div>
         <div className={s.blog_right}>
+          <div className={s.image01}>
+            <img
+              src="images/blog/blog_right/image01.png"
+              alt=""
+              className={s.image}
+              draggable="false"
+            />
+            <div className={s.text}>
+              <p>Élodie - “Élo”</p>
+              <p>17 ans</p>
+              <p>Lion</p>
+              <p>26/07/1991</p>
+            </div>
+          </div>
           <div className={s.input_global}>
             <input type="text" placeholder="Rechercher ..." />
-            <img
-              src="images/blog/blog_right/search.png"
-              alt=""
-              draggable="false"
-              className={s.search}
-            />
+            <div className={s.seach_div}>
+              <img
+                src="images/blog/blog_right/search.png"
+                alt=""
+                draggable="false"
+                className={s.search}
+              />
+            </div>
           </div>
+          <img
+            src="images/blog/blog_right/image02.png"
+            alt=""
+            className={s.image02}
+            draggable="false"
+          />
+          <img
+            src="images/blog/blog_right/image03.png"
+            alt=""
+            draggable="false"
+          />
         </div>
       </div>
     </>
