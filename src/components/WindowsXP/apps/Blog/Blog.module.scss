@@ -38,7 +38,7 @@
 
   .blog_left {
     width: 20%;
-    padding: 10px;
+    margin: 10px;
     text-align: center;
 
     .logo {
@@ -77,8 +77,8 @@
       width: 70px;
       height: 67px;
       position: absolute;
-      left: 6%;
-      top: 90%;
+      left: 5%;
+      top: 113%;
       transform: translateY(90%, 6%);
     }
 
@@ -111,7 +111,7 @@
       height: 121px;
       position: absolute;
       left: 1%;
-      top: 144%;
+      top: 178%;
       transform: translateY(-12%, 1%);
     }
   }
@@ -220,6 +220,7 @@
             justify-content: space-between;
             padding-top: 20px;
             padding-right: 10px;
+            cursor: pointer;
 
             img {
               width: 37px;
@@ -308,8 +309,18 @@
       }
     }
 
+    .jewel01 {
+      width: 42px;
+      height: 42px;
+      position: absolute;
+      left: 97%;
+      top: 13%;
+      transform: translateY(-97%, 13%);
+    }
+
     .input_global {
       display: flex;
+      height: 10%;
       justify-content: space-between;
       background-color: #b49fdb;
       border: 2px solid #000000;
@@ -318,6 +329,7 @@
     }
     input {
       width: 80%;
+      height: auto;
       color: #ffffff;
       padding: 20px;
       border: none;
@@ -328,14 +340,40 @@
       color: #ffffff;
     }
     .search {
+      width: 20%;
       align-items: center;
-      width: 32px;
-      height: max-content;
-      margin: 10px;
+      width: auto;
+      height: auto;
+      // padding: 13px;
+      padding: 13px;
       background-color: #e905d2;
+    }
+    .jewel02 {
+      width: 86px;
+      height: 87px;
+      position: absolute;
+      left: 92%;
+      top: 50%;
+      transform: translateY(-92%, 50%);
     }
     .image02 {
       padding: 60px 0;
+    }
+    .jewel03 {
+      width: 83px;
+      height: 83px;
+      position: absolute;
+      left: 78%;
+      top: 118%;
+      transform: translateY(-92%, 50%);
+    }
+    .jewel04 {
+      width: 83px;
+      height: 78px;
+      position: absolute;
+      left: 93%;
+      top: 160%;
+      transform: translateY(-92%, 50%);
     }
   }
 }

@@ -346,6 +346,12 @@ export default function Blog() {
               <p>26/07/1991</p>
             </div>
           </div>
+          <img
+            src="images/blog/blog_right/jewel01.png"
+            alt=""
+            className={s.jewel01}
+            draggable="false"
+          />
           <div className={s.input_global}>
             <input type="text" placeholder="Rechercher ..." />
             <div className={s.seach_div}>
@@ -358,14 +364,32 @@ export default function Blog() {
             </div>
           </div>
           <img
+            src="images/blog/blog_right/jewel02.png"
+            alt=""
+            className={s.jewel02}
+            draggable="false"
+          />
+          <img
             src="images/blog/blog_right/image02.png"
             alt=""
             className={s.image02}
             draggable="false"
           />
           <img
+            src="images/blog/blog_right/jewel03.png"
+            alt=""
+            className={s.jewel03}
+            draggable="false"
+          />
+          <img
             src="images/blog/blog_right/image03.png"
             alt=""
+            draggable="false"
+          />
+          <img
+            src="images/blog/blog_right/jewel04.png"
+            alt=""
+            className={s.jewel04}
             draggable="false"
           />
         </div>
