@@ -9,7 +9,6 @@
     line-height: 14px;
     display: flex;
     flex-direction: column;
-    -webkit-box-align: center;
     align-items: center;
     background-color: rgb(66, 130, 214);
     border-top-left-radius: 5px;
@@ -19,7 +18,6 @@
       position: relative;
       align-self: flex-start;
       display: flex;
-      -webkit-box-align: center;
       align-items: center;
       color: white;
       height: 54px;
@@ -122,9 +120,7 @@
     footer {
       display: flex;
       align-self: flex-end;
-      -webkit-box-align: center;
       align-items: center;
-      -webkit-box-pack: end;
       justify-content: flex-end;
       color: rgb(255, 255, 255);
       height: 36px;

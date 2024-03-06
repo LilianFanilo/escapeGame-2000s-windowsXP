@@ -24,7 +24,7 @@ function MenuFooter() {
 
   return (
     <>
-      <div className={s.MenuFooter}>
+      <div className={s.MenuFooter} id="menuFooter">
         <div className={s.footerContainer}>
           <header>
             <img src="" alt="" width={42} height={42} />

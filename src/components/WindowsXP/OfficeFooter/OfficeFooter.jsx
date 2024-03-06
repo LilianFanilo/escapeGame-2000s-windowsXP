@@ -4,6 +4,7 @@ import MenuFooter from "./MenuFooter";
 
 function OfficeFooter() {
   const [currentTime, setCurrentTime] = useState(getFormattedTime());
+  const [isVisible, setIsVisible] = useState(false);
 
   function getFormattedTime() {
     const date = new Date();
@@ -38,8 +39,11 @@ function OfficeFooter() {
   return (
     <>
       <footer className={s.bottomBar}>
-        <MenuFooter />
-        <div className={s.bottomBar_menu}>
+        {isVisible && <MenuFooter />}
+        <div
+          className={s.bottomBar_menu}
+          onClick={() => setIsVisible(!isVisible)}
+        >
           <img
             src="./images/office/footer_menu_btn.png"
             alt=""
