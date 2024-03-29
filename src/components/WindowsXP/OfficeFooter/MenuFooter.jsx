@@ -27,7 +27,12 @@ function MenuFooter() {
       <div className={s.MenuFooter} id="menuFooter">
         <div className={s.footerContainer}>
           <header>
-            <img src="" alt="" width={42} height={42} />
+            <img
+              src="./images/login_page/profile_img.png"
+              alt=""
+              width={42}
+              height={42}
+            />
             <span>Elodie</span>
           </header>
           <section className={s.menu}>
@@ -155,6 +160,7 @@ function MenuFooter() {
               size="small"
               img="/images/buttons/btn_off_icon.png"
               text="Éteindre le PC"
+              name="OFF"
             />
           </footer>
         </div>

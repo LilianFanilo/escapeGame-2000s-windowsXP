@@ -9,9 +9,19 @@ function ButtonSystem(props) {
     buttonSize = s.ButtonSystemSmall;
   }
 
+  function OpenSystemPopUp() {
+    if (props.name == "OFF") {
+      let SystemPopUp = document.getElementById("systemPopUp");
+      SystemPopUp.style.display = "block";
+    }
+  }
+
   return (
     <>
-      <div className={`${s.ButtonSystem} ${buttonSize}`}>
+      <div
+        className={`${s.ButtonSystem} ${buttonSize}`}
+        onClick={OpenSystemPopUp}
+      >
         <img src={props.img} alt="" draggable="false" />
         <span>{props.text}</span>
       </div>

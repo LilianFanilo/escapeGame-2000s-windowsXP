@@ -3,7 +3,7 @@ import s from "./SystemPopUp.module.scss";
 function SystemPopUp() {
   return (
     <>
-      <div className={s.SystemPopUp}>
+      <div className={s.SystemPopUp} id="systemPopUp">
         <div className={s.modal}>
           <header>
             <span>Log Off Windows</span>
@@ -15,6 +15,11 @@ function SystemPopUp() {
           </footer>
         </div>
       </div>
+      <style>
+        {`#systemPopUp {
+            display: none;
+          }`}
+      </style>
     </>
   );
 }
