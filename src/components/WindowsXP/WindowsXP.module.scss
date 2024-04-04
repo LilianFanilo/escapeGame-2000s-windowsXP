@@ -1,0 +1,31 @@
+.windowsXP {
+  font-family: Tahoma, "Noto Sans", sans-serif;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  background: url("/images/office/bg_windows.png") center center / cover
+    no-repeat fixed;
+}
+
+.blog_icone {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    background-color: #ffffff5f;
+    cursor: pointer;   
+  }
+
+  .title {
+    position: absolute;
+    top: 60px;
+    left: 13px;
+    font-size: 0.7em;
+    text-align: left;
+    align-items: center;
+  }
+}
