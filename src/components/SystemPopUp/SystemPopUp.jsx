@@ -1,6 +1,6 @@
 import s from "./SystemPopUp.module.scss";
 
-function SystemPopUp() {
+function SystemPopUp(inputVisible) {
   return (
     <>
       <div className={s.SystemPopUp} id="systemPopUp">
@@ -11,15 +11,12 @@ function SystemPopUp() {
           </header>
           <div className={s.content}></div>
           <footer>
-            <button>Cancel</button>
+            <button onClick={() => setInputVisible(!inputVisible)}>
+              Cancel
+            </button>
           </footer>
         </div>
       </div>
-      <style>
-        {`#systemPopUp {
-            display: none;
-          }`}
-      </style>
     </>
   );
 }

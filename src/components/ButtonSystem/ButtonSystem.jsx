@@ -1,6 +1,10 @@
+import { createPortal } from "react-dom";
 import s from "./ButtonSystem.module.scss";
+import { useState } from "react";
+import SystemPopUp from "../SystemPopUp/SystemPopUp";
 
 function ButtonSystem(props) {
+  const [inputVisible, setInputVisible] = useState(false);
   let buttonSize = "";
 
   if (props.size === "big") {
@@ -9,22 +13,22 @@ function ButtonSystem(props) {
     buttonSize = s.ButtonSystemSmall;
   }
 
-  function OpenSystemPopUp() {
-    if (props.name == "OFF") {
-      let SystemPopUp = document.getElementById("systemPopUp");
-      SystemPopUp.style.display = "block";
+  const testButton = () => {
+    if (props.name === "OFF") {
+      console.log("test");
     }
-  }
+    setInputVisible(!inputVisible);
+  };
 
   return (
     <>
-      <div
-        className={`${s.ButtonSystem} ${buttonSize}`}
-        onClick={OpenSystemPopUp}
-      >
+      <div className={`${s.ButtonSystem} ${buttonSize}`} onClick={testButton}>
         <img src={props.img} alt="" draggable="false" />
         <span>{props.text}</span>
       </div>
+      {/* {props.name == "OFF" &&
+        inputVisible &&
+        createPortal(<SystemPopUp />, document.getElementById("root"))} */}
     </>
   );
 }

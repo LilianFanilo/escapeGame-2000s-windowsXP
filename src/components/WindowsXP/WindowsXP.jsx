@@ -5,6 +5,7 @@ import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
 import Blog from "./apps/Blog/Blog";
 import blog_icone from "../../assets/WindowsIcons/blog_icone.png";
 import { useState } from "react";
+import Audiovisualiser from "./apps/Audiovisualiser/Audiovisualiser";
 
 function WindowsXP() {
   const [blogVisible, setBlogVisible] = useState(false);
@@ -32,6 +33,7 @@ function WindowsXP() {
       </div>
       {/* Affichage du composant Blog lorsque blogVisible est true */}
       {blogVisible && <Blog />}
+      {/* <Audiovisualiser /> */}
     </>
   );
 }
