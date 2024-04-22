@@ -7,10 +7,31 @@
   transform: translate(-50%, -50%);
   background-color: white;
   width: 40vw;
-  height: 50vh;
+  // height: 50vh;
   overflow-y: scroll;
   overflow-x: hidden;
   display: flex;
   // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: "Inter", sans-serif;
+
+  nav {
+    font-size: 15px;
+
+    ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        padding: 10px;
+      }
+    }
+  }
+  video {
+    background-color: black;
+  }
+
+  figcaption {
+    display: flex;
+  }
 }

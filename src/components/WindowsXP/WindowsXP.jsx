@@ -33,7 +33,7 @@ function WindowsXP() {
       </div>
       {/* Affichage du composant Blog lorsque blogVisible est true */}
       {blogVisible && <Blog />}
-      {/* <Audiovisualiser /> */}
+      <Audiovisualiser />
     </>
   );
 }
