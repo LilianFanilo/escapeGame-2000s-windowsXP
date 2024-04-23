@@ -35,19 +35,29 @@ const Audiovisualiser = () => {
         </div>
         <div className={s.videoInputsRight}>
           <div className={s.progressContainer}>
-            <button>►</button>
+            <button>
+              <img src="/images/audiovisualiser/btn_past.svg" alt="" />
+            </button>
             <progress id="progress" max="100" value="0">
               Progress
             </progress>
-            <button>►</button>
+            <button>
+              <img src="/images/audiovisualiser/btn_forward.svg" alt="" />
+            </button>
           </div>
           <div className={s.btnContainer}>
             <div>
-              <button>►</button>
-              <button>►</button>
+              <button className={s.pinkBtn}>
+                <img src="/images/audiovisualiser/btn_previous.svg" alt="" />
+              </button>
+              <button className={s.pinkBtn}>
+                <img src="/images/audiovisualiser/btn_next.svg" alt="" />
+              </button>
             </div>
             <div>
-              <button>🕪</button>
+              <button className={s.pinkBtn}>
+                <img src="/images/audiovisualiser/btn_audio.svg" alt="" />
+              </button>
               <progress></progress>
             </div>
             <div>
