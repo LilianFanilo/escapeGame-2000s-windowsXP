@@ -10,8 +10,13 @@ import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 
 function WindowsXP() {
+  const [noteVisible, setNoteVisible] = useState(false);
   const [blogVisible, setBlogVisible] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
+
+  const handleNoteIconDoubleClick = () => {
+    setNoteVisible(true);
+  };
 
   const handleBlogIconDoubleClick = () => {
     setBlogVisible(true);
@@ -26,7 +31,7 @@ function WindowsXP() {
       <div className={s.windowsXP}>
         <OfficeFooter />
       </div>
-      <div className={s.officeIcons}>
+      <div className={s.officeIcons} onDoubleClick={handleNoteIconDoubleClick}>
         <div className={s.app_icon}>
           <img
             draggable="false"
@@ -38,6 +43,8 @@ function WindowsXP() {
           />
           <span className={s.title}>Notepad</span>
         </div>
+        {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
+        {noteVisible && <Notepad />}
 
         <div className={s.app_icon} onDoubleClick={handleBlogIconDoubleClick}>
           <img
@@ -64,7 +71,7 @@ function WindowsXP() {
           />
           <span className={s.title}>Lecteur audio</span>
         </div>
-        {/* Affichage du composant Blog lorsque blogVisible est true */}
+        {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
         {audioVisible && <Audiovisualiser />}
       </div>
     </>
