@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <WindowsXP />
-      {/* <LoginPage /> */}
+      <LoginPage />
     </>
   );
 }

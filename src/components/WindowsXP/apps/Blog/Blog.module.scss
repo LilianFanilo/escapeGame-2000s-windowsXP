@@ -276,10 +276,11 @@
         display: flex;
         flex-wrap: wrap;
         background-color: #ed8fe4;
-        height: 143px;
+        padding: 60px 0;
 
         .video {
           width: 33%;
+          height: 143px;
           text-align: center;
           margin: 60px 0 0 0;
           // transition: all 0.2s ease-in-out;
