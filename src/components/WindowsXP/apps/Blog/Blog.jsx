@@ -1,9 +1,11 @@
 import { useRef, useState } from "react";
+import ReactPlayer from "react-player";
 import s from "./Blog.module.scss";
 
 export default function Blog() {
   const [inputVisible, setInputVisible] = useState(false);
   const [activeSection, setActiveSection] = useState("Accueil");
+  const [videoUrl, setVideoUrl] = useState("");
 
   const toggleInputVisibility = () => {
     setInputVisible(!inputVisible);
@@ -13,14 +15,15 @@ export default function Blog() {
     setActiveSection(section);
   };
 
-  function loadVideo(videoSrc) {
-    var videoPlayer = document.getElementById("videoPlayer");
-    var videoSource = document.getElementById("videoSource");
+  const videoUrls = [
+    "https://www.youtube.com/watch?v=4x5fk6tzHBo",
+    "https://www.youtube.com/watch?v=VIDEO_ID_2",
+  ];
 
-    videoSource.src = videoSrc;
-    videoPlayer.load();
-    videoPlayer.style.display = "block";
-  }
+  const handleImageClick = (index) => {
+    const selectedVideoUrl = videoUrls[index];
+    setVideoUrl(selectedVideoUrl);
+  };
 
   return (
     <>
@@ -199,135 +202,33 @@ export default function Blog() {
           {activeSection === "Galerie" && (
             <div className={s.darkpink_border}>
               <div className={s.gallery}>
-                <div
-                  className={s.video}
-                  onClick={() => loadVideo("video_001.mp4")}
-                >
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_01.png"
-                    alt="Video 001"
-                    draggable="false"
-                  />
-                  <p>vidéo 001</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_02.png"
-                    alt="Video 002"
-                    draggable="false"
-                  />
-                  <p>vidéo 002</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_03.png"
-                    alt="Video 003"
-                    draggable="false"
-                  />
-                  <p>vidéo 003</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_04.png"
-                    alt="Video 004"
-                    draggable="false"
-                  />
-                  <p>vidéo 004</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_05.png"
-                    alt="Video 005"
-                    draggable="false"
-                  />
-                  <p>vidéo 005</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_06.png"
-                    alt="Video 006"
-                    draggable="false"
-                  />
-                  <p>vidéo 006</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_07.png"
-                    alt="Video 007"
-                    draggable="false"
-                  />
-                  <p>vidéo 007</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_08.png"
-                    alt="Video 008"
-                    draggable="false"
-                  />
-                  <p>vidéo 008</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_09.png"
-                    alt="Video 009"
-                    draggable="false"
-                  />
-                  <p>vidéo 009</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_10.png"
-                    alt="Video 010"
-                    draggable="false"
-                  />
-                  <p>vidéo 010</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_11.png"
-                    alt="Video 011"
-                    draggable="false"
-                  />
-                  <p>vidéo 011</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_12.png"
-                    alt="Video 012"
-                    draggable="false"
-                  />
-                  <p>vidéo 012</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_13.png"
-                    alt="Video 013"
-                    draggable="false"
-                  />
-                  <p>vidéo 013</p>
-                </div>
-                <div className={s.video}>
-                  <img
-                    src="images/blog/blog_center/video_thumbnail_14.png"
-                    alt="Video 014"
-                    draggable="false"
-                  />
-                  <p>vidéo 014</p>
-                </div>
+                {videoUrls.map((url, index) => (
+                  <div
+                    className={s.video}
+                    key={index}
+                    onClick={() => handleImageClick(index)}
+                  >
+                    <img
+                      src={`images/blog/blog_center/video_thumbnail_${
+                        index + 1
+                      }.png`}
+                      alt={`Video ${index + 1}`}
+                      draggable="false"
+                    />
+                    <p>vidéo {index + 1}</p>
+                  </div>
+                ))}
               </div>
-              <video
-                id="videoPlayer"
-                controls
-                style={{ display: "none" }}
-                className={s.video_on}
-              >
-                <source
-                  id="videoSource"
-                  src="/videos/video_001.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
+              {videoUrl && (
+                <div className={s.videoPlayer}>
+                  <ReactPlayer
+                    url={videoUrl}
+                    controls
+                    width="100%"
+                    height="100%"
+                  />
+                </div>
+              )}
             </div>
           )}
         </div>
