@@ -5,7 +5,8 @@ import Notepad from "./apps/Notepad/Notepad";
 import ErrorPopUp from "../ErrorPopUp/ErrorPopUp";
 import Blog from "./apps/Blog/Blog";
 import Audiovisualiser from "./apps/Audiovisualiser/Audiovisualiser";
-import blog_icone from "../../assets/WindowsIcons/blog_icone.png";
+import notepad_icon from "../../assets/WindowsIcons/notepad.png";
+import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 
 function WindowsXP() {
@@ -25,37 +26,47 @@ function WindowsXP() {
       <div className={s.windowsXP}>
         <OfficeFooter />
       </div>
-      <Notepad />
-      <div className={s.blog_icone} onDoubleClick={handleBlogIconDoubleClick}>
-        <img
-          draggable="false"
-          height={30}
-          width={30}
-          src={blog_icone}
-          className={s.blog_icone}
-          alt=""
-        />
-        <p className={s.title}>Blog</p>
-      </div>
-      {/* Affichage du composant Blog lorsque blogVisible est true */}
-      {blogVisible && <Blog />}
+      <div className={s.officeIcons}>
+        <div className={s.app_icon}>
+          <img
+            draggable="false"
+            height={30}
+            width={30}
+            src={notepad_icon}
+            className={s.image}
+            alt=""
+          />
+          <span className={s.title}>Notepad</span>
+        </div>
 
-      <div
-        className={s.audiovisualiser_icon}
-        onDoubleClick={handleAudioIconDoubleClick}
-      >
-        <img
-          draggable="false"
-          height={30}
-          width={30}
-          src={audiovisualiser_icon}
-          className={s.audiovisualiser_icon}
-          alt=""
-        />
-        <p className={s.title}>Lecteur audio</p>
+        <div className={s.app_icon} onDoubleClick={handleBlogIconDoubleClick}>
+          <img
+            draggable="false"
+            height={30}
+            width={30}
+            src={blog_icon}
+            className={s.blog_icon}
+            alt=""
+          />
+          <span className={s.title}>Blog</span>
+        </div>
+        {/* Affichage du composant Blog lorsque blogVisible est true */}
+        {blogVisible && <Blog />}
+
+        <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
+          <img
+            draggable="false"
+            height={30}
+            width={30}
+            src={audiovisualiser_icon}
+            className={s.audiovisualiser_icon}
+            alt=""
+          />
+          <span className={s.title}>Lecteur audio</span>
+        </div>
+        {/* Affichage du composant Blog lorsque blogVisible est true */}
+        {audioVisible && <Audiovisualiser />}
       </div>
-      {/* Affichage du composant Blog lorsque blogVisible est true */}
-      {audioVisible && <Audiovisualiser />}
     </>
   );
 }
