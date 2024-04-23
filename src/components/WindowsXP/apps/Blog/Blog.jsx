@@ -28,7 +28,7 @@ export default function Blog() {
 
   return (
     <>
-      <Suspense>
+      <Suspense fallback={<Loading />}>
         <div className={s.blog}>
           <div className={s.blog_left}>
             <img
@@ -303,4 +303,8 @@ export default function Blog() {
       </Suspense>
     </>
   );
+}
+
+function Loading() {
+  return <h2>🌀 Loading...</h2>;
 }
