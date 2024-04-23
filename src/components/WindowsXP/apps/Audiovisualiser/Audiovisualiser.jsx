@@ -15,25 +15,44 @@ const Audiovisualiser = () => {
       </nav>
       <video src=""></video>
       <figcaption>
-        <div>
-          <button id="play" aria-label="Play" role="button">
+        <div className={s.videoInputsLeft}>
+          <button
+            className={s.btnPlay}
+            id="play"
+            aria-label="Play"
+            role="button"
+          >
             ►
           </button>
-          <button id="play" aria-label="Play" role="button">
-            ►
+          <button
+            className={s.btnStop}
+            id="play"
+            aria-label="Play"
+            role="button"
+          >
+            ■
           </button>
         </div>
-        <div>
-          <div>
+        <div className={s.videoInputsRight}>
+          <div className={s.progressContainer}>
+            <button>►</button>
             <progress id="progress" max="100" value="0">
               Progress
             </progress>
+            <button>►</button>
           </div>
-          <div>
-            <button></button>
-            <button></button>
-            <button></button>
-            <progress></progress>
+          <div className={s.btnContainer}>
+            <div>
+              <button>►</button>
+              <button>►</button>
+            </div>
+            <div>
+              <button>🕪</button>
+              <progress></progress>
+            </div>
+            <div>
+              <span>Nom Chanson</span>
+            </div>
           </div>
         </div>
       </figcaption>
