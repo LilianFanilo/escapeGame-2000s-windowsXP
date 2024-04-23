@@ -8,6 +8,7 @@
 /* TRACK */
 ::-webkit-scrollbar-track {
   background: #e905d2;
+  cursor: -webkit-grab;
   cursor: grab;
 }
 
@@ -30,6 +31,11 @@
   display: flex;
   // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: "Inter", sans-serif;
+
+  ::-moz-selection {
+    color: #ed8fe4;
+    background-color: #e905d2;
+  }
 
   ::selection {
     color: #ed8fe4;
@@ -187,6 +193,8 @@
         background-color: #ed8fe4;
         // border: 12px solid #ed8fe4;
         width: 100%;
+        height: -webkit-max-content;
+        height: -moz-max-content;
         height: max-content;
 
         .first_comment {
@@ -241,6 +249,22 @@
               outline: none;
             }
 
+            input::-webkit-input-placeholder {
+              color: #000000;
+            }
+
+            input::-moz-placeholder {
+              color: #000000;
+            }
+
+            input:-ms-input-placeholder {
+              color: #000000;
+            }
+
+            input::-ms-input-placeholder {
+              color: #000000;
+            }
+
             input::placeholder {
               color: #000000;
             }
@@ -252,6 +276,7 @@
         display: flex;
         flex-wrap: wrap;
         background-color: #ed8fe4;
+        height: 143px;
 
         .video {
           width: 33%;
@@ -340,6 +365,18 @@
       border: none;
       outline: 0;
       background-color: transparent;
+    }
+    input::-webkit-input-placeholder {
+      color: #ffffff;
+    }
+    input::-moz-placeholder {
+      color: #ffffff;
+    }
+    input:-ms-input-placeholder {
+      color: #ffffff;
+    }
+    input::-ms-input-placeholder {
+      color: #ffffff;
     }
     input::placeholder {
       color: #ffffff;
