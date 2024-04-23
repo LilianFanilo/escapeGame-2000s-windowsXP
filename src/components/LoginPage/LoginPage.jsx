@@ -21,14 +21,11 @@ function LoginPage() {
 
     const PwdVerification = () => {
       let pwd = document.querySelector("#loginPassword").value;
-      const pwdGood = "021208";
-      console.log(pwd);
+      const pwdGood = "281108";
       if (pwd === pwdGood) {
-        console.log("Bon mot de passe !");
         let loginPage = document.querySelector(".loginPage");
         loginPage.classList.add("is_hidden");
       } else {
-        console.log("Mauvais mot de passe...");
         pwdError += 1;
         console.log(pwdError);
         let pwdErrorDisplay = document.querySelector(".pwdError");
