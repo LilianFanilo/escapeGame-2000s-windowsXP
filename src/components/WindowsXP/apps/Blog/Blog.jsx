@@ -16,7 +16,7 @@ export default function Blog() {
   };
 
   const videoUrls = [
-    "https://www.youtube.com/watch?v=4x5fk6tzHBo",
+    "https://vimeo.com/938115210?share=copy",
     "https://youtu.be/pSlzuaosXzY",
     "https://youtu.be/lGaGkWisEx8",
   ];
