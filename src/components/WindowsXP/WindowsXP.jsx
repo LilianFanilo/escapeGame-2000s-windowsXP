@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Suspense, useState } from "react";
 import s from "./WindowsXP.module.scss";
 import OfficeFooter from "./OfficeFooter/OfficeFooter";
 import Notepad from "./apps/Notepad/Notepad";
@@ -91,7 +91,11 @@ function WindowsXP() {
           <span className={s.title}>Blog</span>
         </div>
         {/* Affichage du composant Blog lorsque blogVisible est true */}
-        {blogVisible && <Blog />}
+        {blogVisible && (
+          <Suspense>
+            <Blog />
+          </Suspense>
+        )}
 
         <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
           <img
