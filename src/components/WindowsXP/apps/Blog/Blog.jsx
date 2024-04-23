@@ -17,7 +17,8 @@ export default function Blog() {
 
   const videoUrls = [
     "https://www.youtube.com/watch?v=4x5fk6tzHBo",
-    "https://www.youtube.com/watch?v=VIDEO_ID_2",
+    "https://youtu.be/pSlzuaosXzY",
+    "https://youtu.be/lGaGkWisEx8",
   ];
 
   const handleImageClick = (index) => {
@@ -226,6 +227,7 @@ export default function Blog() {
                     controls
                     width="100%"
                     height="100%"
+                    playing
                   />
                 </div>
               )}
