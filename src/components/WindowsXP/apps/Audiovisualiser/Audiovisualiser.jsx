@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import s from "./Audiovisualiser.module.scss";
+import Window from "../../../Window/Window";
 
 const Audiovisualiser = () => {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -60,81 +61,83 @@ const Audiovisualiser = () => {
   };
 
   return (
-    <div className={s.audiovisualiser}>
-      <nav>
-        <ul>
-          <li>Fichiers</li>
-          <li>Vue</li>
-          <li>Play</li>
-          <li>Outils</li>
-          <li>Aide</li>
-        </ul>
-      </nav>
-      {/* Appel de la vidéo */}
-      <video
-        id="myVideo"
-        src="https://www.w3schools.com/html/mov_bbb.mp4"
-        onTimeUpdate={updateProgressBar}
-      ></video>
+    <Window>
+      <div className={s.audiovisualiser}>
+        <nav>
+          <ul>
+            <li>Fichiers</li>
+            <li>Vue</li>
+            <li>Play</li>
+            <li>Outils</li>
+            <li>Aide</li>
+          </ul>
+        </nav>
+        {/* Appel de la vidéo */}
+        <video
+          id="myVideo"
+          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          onTimeUpdate={updateProgressBar}
+        ></video>
 
-      <figcaption>
-        <div className={s.videoInputsLeft}>
-          {/* Button Play Pause */}
-          <button className={s.btnPlay} onClick={playVid}>
-            {isPlaying && "II"}
-            {!isPlaying && "►"}
-          </button>
-          {/* Restart */}
-          <button className={s.btnStop} onClick={restartVid}>
-            ■
-          </button>
-        </div>
-        <div className={s.videoInputsRight}>
-          <div className={s.progressContainer}>
-            {/* Rewind */}
-            <button onClick={() => skip(-10)}>
-              <img src="/images/audiovisualiser/btn_past.svg" alt="" />
+        <figcaption>
+          <div className={s.videoInputsLeft}>
+            {/* Button Play Pause */}
+            <button className={s.btnPlay} onClick={playVid}>
+              {isPlaying && "II"}
+              {!isPlaying && "►"}
             </button>
-            {/* Progress bar */}
-            <progress
-              id="progress-bar"
-              min={0}
-              max={100}
-              value={0}
-              onClick={() => seekTimeStamp(event)}
-            ></progress>
-            {/* Fast Forward */}
-            <button onClick={() => skip(10)}>
-              <img src="/images/audiovisualiser/btn_forward.svg" alt="" />
+            {/* Restart */}
+            <button className={s.btnStop} onClick={restartVid}>
+              ■
             </button>
           </div>
-          <div className={s.btnContainer}>
-            <div>
-              {/* Volume Mute */}
-              <button id="btnMute" onClick={muteVolume}>
-                {isMuted && "Mute"}
-                {!isMuted && (
-                  <img src="/images/audiovisualiser/btn_audio.svg" alt="" />
-                )}
+          <div className={s.videoInputsRight}>
+            <div className={s.progressContainer}>
+              {/* Rewind */}
+              <button onClick={() => skip(-10)}>
+                <img src="/images/audiovisualiser/btn_past.svg" alt="" />
               </button>
-              {/* Volume Changer */}
-              <input
-                type="range"
-                id="volume-bar"
-                title="volume"
+              {/* Progress bar */}
+              <progress
+                id="progress-bar"
                 min={0}
-                max={1}
-                step={0.1}
-                onChange={changeVolume}
-              />
+                max={100}
+                value={0}
+                onClick={() => seekTimeStamp(event)}
+              ></progress>
+              {/* Fast Forward */}
+              <button onClick={() => skip(10)}>
+                <img src="/images/audiovisualiser/btn_forward.svg" alt="" />
+              </button>
             </div>
-            <div>
-              <span>Nom Chanson</span>
+            <div className={s.btnContainer}>
+              <div>
+                {/* Volume Mute */}
+                <button id="btnMute" onClick={muteVolume}>
+                  {isMuted && "Mute"}
+                  {!isMuted && (
+                    <img src="/images/audiovisualiser/btn_audio.svg" alt="" />
+                  )}
+                </button>
+                {/* Volume Changer */}
+                <input
+                  type="range"
+                  id="volume-bar"
+                  title="volume"
+                  min={0}
+                  max={1}
+                  step={0.1}
+                  onChange={changeVolume}
+                />
+              </div>
+              <div>
+                <span>Nom Chanson</span>
+              </div>
             </div>
           </div>
-        </div>
-      </figcaption>
-    </div>
+        </figcaption>
+      </div>
+    </Window>
   );
 };
 

@@ -3,12 +3,13 @@
   display: flex;
   padding: 3px;
   flex-direction: column;
-  // top: 50%;
-  // left: 50%;
-  // transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   height: auto;
-  z-index: 5;
+  z-index: 1;
   font-family: Tahoma, "Noto Sans", sans-serif;
   background-color: rgb(8, 49, 217);
   border-top-left-radius: 8px;
@@ -58,7 +59,6 @@
     position: absolute;
     left: 3px;
     right: 3px;
-    -webkit-box-align: center;
     align-items: center;
 
     .window_header_icon {
@@ -82,7 +82,6 @@
       opacity: 1;
       height: 22px;
       display: flex;
-      -webkit-box-align: center;
       align-items: center;
       margin-top: -1px;
       margin-right: 1px;
@@ -106,6 +105,7 @@
       }
 
       .window_button:hover {
+        -webkit-filter: brightness(120%);
         filter: brightness(120%);
       }
 
@@ -169,7 +169,6 @@
       .error_bottom {
         display: flex;
         width: 100%;
-        -webkit-box-pack: center;
         justify-content: center;
 
         .error_button {
@@ -177,11 +176,12 @@
           height: 22px;
           display: flex;
           border: 1px solid black;
-          -webkit-box-pack: center;
           justify-content: center;
-          -webkit-box-align: center;
           align-items: center;
           box-shadow: black -1px -1px 1px inset;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
           user-select: none;
 
           .error_confirm {
