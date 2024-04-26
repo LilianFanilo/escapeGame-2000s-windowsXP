@@ -11,6 +11,7 @@ import notepad_icon from "../../assets/WindowsIcons/notepad.png";
 import doc_icon from "../../assets/WindowsIcons/doc_icon.png";
 import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
+import Window from "../Window/Window";
 
 function WindowsXP() {
   const [trashVisible, setTrashVisible] = useState(false);
