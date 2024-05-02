@@ -12,6 +12,7 @@ import doc_icon from "../../assets/WindowsIcons/doc_icon.png";
 import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 import Window from "../Window/Window";
+import PopUp from "../PopUp/PopUp";
 
 function WindowsXP() {
   const [trashVisible, setTrashVisible] = useState(false);
@@ -106,6 +107,7 @@ function WindowsXP() {
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
         {audioVisible && <Audiovisualiser />}
+        {audioVisible && <PopUp />}
       </div>
     </>
   );
