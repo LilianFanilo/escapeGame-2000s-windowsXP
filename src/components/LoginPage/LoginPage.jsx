@@ -21,21 +21,42 @@ function LoginPage() {
 
     const PwdVerification = () => {
       let pwd = document.querySelector("#loginPassword").value;
-      const pwdGood = "281108";
-      if (pwd === pwdGood) {
-        let loginPage = document.querySelector(".loginPage");
-        loginPage.classList.add("is_hidden");
-      } else {
-        pwdError += 1;
-        console.log(pwdError);
-        let pwdErrorDisplay = document.querySelector(".pwdError");
-        pwdErrorDisplay.classList.add("is_visible");
-      }
 
-      if (pwdError >= 5) {
-        let pwdHint = document.querySelector(".pwdHint");
-        pwdHint.classList.add("is_visible");
-      }
+      let options = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: "elodie",
+          password: pwd,
+        }),
+      };
+
+      // Add loading fetch
+
+      fetch("https://escapegame-back.onrender.com/login", options)
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.success) {
+            let loginPage = document.querySelector(".loginPage");
+            loginPage.classList.add("is_hidden");
+            console.log("Login successful");
+          } else {
+            pwdError += 1;
+            console.log(pwdError);
+            let pwdErrorDisplay = document.querySelector(".pwdError");
+            pwdErrorDisplay.classList.add("is_visible");
+            console.log("Login failed: ", json.message);
+          }
+          if (pwdError >= 5) {
+            let pwdHint = document.querySelector(".pwdHint");
+            pwdHint.classList.add("is_visible");
+          }
+        })
+        .catch((error) => {
+          console.error("Error during login:", error);
+        });
     };
 
     document.addEventListener("keypress", handleKeyPress);
