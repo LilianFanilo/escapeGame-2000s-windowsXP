@@ -49,6 +49,17 @@ const Audiovisualiser = () => {
     console.log(evt);
   };
 
+  const updateVolumeStyle = () => {
+    let volumeRange = document.getElementById("volume-bar");
+
+    volumeRange.addEventListener("input", function () {
+      const value = this.value;
+      this.style.background = `linear-gradient(to right, #4CAF50 0%, #4CAF50 ${value}%, #ddd ${value}%, #ddd 100%)`;
+    });
+  };
+
+  updateVolumeStyle;
+
   const muteVolume = () => {
     let vid = document.getElementById("myVideo");
     if (vid.muted) {
@@ -88,7 +99,7 @@ const Audiovisualiser = () => {
             </button>
             {/* Restart */}
             <button className={s.btnStop} onClick={restartVid}>
-              ■
+              <div>■</div>
             </button>
           </div>
           <div className={s.videoInputsRight}>
@@ -111,9 +122,9 @@ const Audiovisualiser = () => {
               </button>
             </div>
             <div className={s.btnContainer}>
-              <div>
+              <div className={s.volumeContainer}>
                 {/* Volume Mute */}
-                <button id="btnMute" onClick={muteVolume}>
+                <button id="btnMute" className={s.btnMute} onClick={muteVolume}>
                   {isMuted && "Mute"}
                   {!isMuted && (
                     <img src="/images/audiovisualiser/btn_audio.svg" alt="" />

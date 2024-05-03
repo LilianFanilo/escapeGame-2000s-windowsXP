@@ -8,7 +8,7 @@ const PopupStyle2 = () => {
 
   return (
     <Window>
-      <div className={s.PopupStyle2}>Test2</div>
+      <div className={s.PopupStyle2}></div>
     </Window>
   );
 };
