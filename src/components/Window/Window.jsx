@@ -82,6 +82,14 @@ export default function Window({ onClose, children }) {
           <div className={s.window_header_title}>C:\</div>
           <div className={s.window_close}>
             <button
+              className={s.window_minimize}
+              onClick={handleConfirmClick}
+            ></button>
+            <button
+              className={s.window_maximize}
+              onClick={handleConfirmClick}
+            ></button>
+            <button
               className={s.window_button}
               onClick={handleConfirmClick}
             ></button>
