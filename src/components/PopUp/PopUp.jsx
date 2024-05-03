@@ -36,7 +36,7 @@ const PopupContainer = () => {
         const newPopup = generateRandomPopup();
         setPopups((prevPopups) => [...prevPopups, newPopup]);
       },
-      getRandomInt(5000, 10000),
+      getRandomInt(7000, 10000),
     );
 
     return () => clearInterval(interval);
