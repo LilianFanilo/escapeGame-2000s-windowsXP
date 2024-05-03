@@ -107,7 +107,7 @@ function WindowsXP() {
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
         {audioVisible && <Audiovisualiser />}
-        {/* {audioVisible && <PopUp />} */}
+        {audioVisible && <PopUp />}
       </div>
     </>
   );
