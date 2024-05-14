@@ -8,7 +8,6 @@ function LoginPage() {
 
   useEffect(() => {
     let accessOffice = document.getElementById("accessOffice");
-    console.log(accessOffice);
 
     const handleKeyPress = (event) => {
       const keyName = event.key;
@@ -21,6 +20,7 @@ function LoginPage() {
 
     const PwdVerification = () => {
       let pwd = document.querySelector("#loginPassword").value;
+      document.body.style.cursor = "wait";
 
       let options = {
         method: "POST",
@@ -53,9 +53,11 @@ function LoginPage() {
             let pwdHint = document.querySelector(".pwdHint");
             pwdHint.classList.add("is_visible");
           }
+          document.body.style.cursor = "default";
         })
         .catch((error) => {
           console.error("Error during login:", error);
+          document.body.style.cursor = "default";
         });
     };
 
