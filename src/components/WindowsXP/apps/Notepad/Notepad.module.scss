@@ -24,6 +24,13 @@
 
       div {
         padding: 0px 7px;
+        cursor: default;
+        font-size: 0.8rem;
+
+        &:hover {
+          background-color: rgb(22, 96, 232);
+          color: white;
+        }
       }
     }
   }
