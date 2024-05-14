@@ -5,7 +5,7 @@ import s from "./PopUp.module.scss";
 const PopupStyle5 = () => {
   return (
     <Window>
-      <div className={s.PopupStyle5}>Test5</div>
+      <div className={s.PopupStyle5}></div>
     </Window>
   );
 };
