@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import s from "./LoginPage.module.scss";
 import "./LoginPage.scss";
 import ButtonSystem from "../ButtonSystem/ButtonSystem";
+import sound from "../../assets/sounds/error.wav";
 
 function LoginPage() {
   let pwdError = 0;
@@ -33,6 +34,8 @@ function LoginPage() {
         }),
       };
 
+      var audio = new Audio(sound);
+
       // Add loading fetch
 
       fetch("https://escapegame-back.onrender.com/login", options)
@@ -43,6 +46,7 @@ function LoginPage() {
             loginPage.classList.add("is_hidden");
             console.log("Login successful");
           } else {
+            audio.play();
             pwdError += 1;
             console.log(pwdError);
             let pwdErrorDisplay = document.querySelector(".pwdError");
