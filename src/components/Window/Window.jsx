@@ -1,5 +1,5 @@
 import s from "./Window.module.scss";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
 
@@ -9,6 +9,7 @@ export default function Window({ onClose, children }) {
   const [isDragging, setIsDragging] = useState(false);
   const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
   const [isFirstLoop, setIsFirstLoop] = useState(true);
+  const windowRef = useRef(null);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -42,11 +43,20 @@ export default function Window({ onClose, children }) {
       setIsFirstLoop(false);
     }
 
+    const handleClickOutside = (e) => {
+      if (windowEl && !windowEl.contains(e.target)) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [isDragging, initialPosition, windowPosition]);
+  }, [isDragging, initialPosition, windowPosition, isFirstLoop, onClose]);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
@@ -61,10 +71,12 @@ export default function Window({ onClose, children }) {
   const handleConfirmClick = () => {
     onClose();
   };
+
   return (
     <>
       <div
         id="windowComponent"
+        ref={windowRef}
         className={s.window}
         style={{
           transform: `translate(${windowPosition.x}px, ${windowPosition.y}px)`,
