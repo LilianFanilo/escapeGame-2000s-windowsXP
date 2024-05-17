@@ -7,25 +7,37 @@
     no-repeat fixed;
 }
 
-.blog_icone {
+.officeIcons {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
   position: absolute;
-  top: 40px;
-  left: 10px;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  width: 100vw;
+  height: 100vh;
+  padding-top: 15px;
+  padding-left: 15px;
+}
+
+.app_icon {
   color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 60px;
+  row-gap: 5px;
 
   &:hover {
     background-color: #ffffff5f;
-    cursor: pointer;   
+    cursor: pointer;
   }
 
   .title {
-    position: absolute;
-    top: 60px;
-    left: 13px;
     font-size: 0.7em;
-    text-align: left;
+    text-align: center;
     align-items: center;
   }
 }

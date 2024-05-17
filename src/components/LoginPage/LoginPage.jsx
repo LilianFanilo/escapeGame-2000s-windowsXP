@@ -2,13 +2,13 @@ import { useEffect } from "react";
 import s from "./LoginPage.module.scss";
 import "./LoginPage.scss";
 import ButtonSystem from "../ButtonSystem/ButtonSystem";
+import sound from "../../assets/sounds/error.wav";
 
 function LoginPage() {
   let pwdError = 0;
 
   useEffect(() => {
     let accessOffice = document.getElementById("accessOffice");
-    console.log(accessOffice);
 
     const handleKeyPress = (event) => {
       const keyName = event.key;
@@ -21,24 +21,48 @@ function LoginPage() {
 
     const PwdVerification = () => {
       let pwd = document.querySelector("#loginPassword").value;
-      const pwdGood = "021208";
-      console.log(pwd);
-      if (pwd === pwdGood) {
-        console.log("Bon mot de passe !");
-        let loginPage = document.querySelector(".loginPage");
-        loginPage.classList.add("is_hidden");
-      } else {
-        console.log("Mauvais mot de passe...");
-        pwdError += 1;
-        console.log(pwdError);
-        let pwdErrorDisplay = document.querySelector(".pwdError");
-        pwdErrorDisplay.classList.add("is_visible");
-      }
+      document.body.style.cursor = "wait";
 
-      if (pwdError >= 5) {
-        let pwdHint = document.querySelector(".pwdHint");
-        pwdHint.classList.add("is_visible");
-      }
+      let options = {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify({
+          username: "elodie",
+          password: pwd,
+        }),
+      };
+
+      var audio = new Audio(sound);
+
+      // Add loading fetch
+
+      fetch("https://escapegame-back.onrender.com/login", options)
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.success) {
+            let loginPage = document.querySelector(".loginPage");
+            loginPage.classList.add("is_hidden");
+            console.log("Login successful");
+          } else {
+            audio.play();
+            pwdError += 1;
+            console.log(pwdError);
+            let pwdErrorDisplay = document.querySelector(".pwdError");
+            pwdErrorDisplay.classList.add("is_visible");
+            console.log("Login failed: ", json.message);
+          }
+          if (pwdError >= 5) {
+            let pwdHint = document.querySelector(".pwdHint");
+            pwdHint.classList.add("is_visible");
+          }
+          document.body.style.cursor = "default";
+        })
+        .catch((error) => {
+          console.error("Error during login:", error);
+          document.body.style.cursor = "default";
+        });
     };
 
     document.addEventListener("keypress", handleKeyPress);

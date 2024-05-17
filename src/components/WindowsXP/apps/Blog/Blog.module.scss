@@ -8,6 +8,7 @@
 /* TRACK */
 ::-webkit-scrollbar-track {
   background: #e905d2;
+  cursor: -webkit-grab;
   cursor: grab;
 }
 
@@ -18,10 +19,10 @@
 }
 
 .blog {
-  position: absolute;
-  top: 48%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  // top: 48%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
   background: url(/images/blog/bg/blog_bgg.jpg);
   width: 90vw;
   height: 85vh;
@@ -30,6 +31,12 @@
   display: flex;
   // font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-family: "Inter", sans-serif;
+  z-index: 0;
+
+  ::-moz-selection {
+    color: #ed8fe4;
+    background-color: #e905d2;
+  }
 
   ::selection {
     color: #ed8fe4;
@@ -37,6 +44,7 @@
   }
 
   .blog_left {
+    position: relative;
     width: 20%;
     margin: 10px;
     text-align: center;
@@ -64,9 +72,9 @@
       width: 48px;
       height: 50px;
       position: absolute;
-      left: 18%;
-      top: 58%;
-      transform: translateY(58%, 18%);
+      left: 86%;
+      top: 73%;
+      transform: translateY(73%, 86%);
     }
 
     .image02 {
@@ -77,9 +85,9 @@
       width: 70px;
       height: 67px;
       position: absolute;
-      left: 5%;
-      top: 113%;
-      transform: translateY(90%, 6%);
+      left: 23%;
+      top: 114%;
+      transform: translateY(114%, 23%);
     }
 
     .prefs {
@@ -111,12 +119,13 @@
       height: 121px;
       position: absolute;
       left: 1%;
-      top: 178%;
-      transform: translateY(-12%, 1%);
+      top: 180%;
+      transform: translateY(180%, 1%);
     }
   }
 
   .blog_center {
+    position: relative;
     width: 60%;
     height: auto;
     color: #ffffff;
@@ -142,18 +151,18 @@
       width: 91px;
       height: 105px;
       position: absolute;
-      left: 73%;
+      left: 90%;
       top: 13%;
-      transform: translateY(-13%, 73%);
+      transform: translateY(13%, 90%);
     }
 
     .jewel03 {
       width: 90px;
       height: 91px;
       position: absolute;
-      left: 18%;
+      left: -4%;
       top: 142%;
-      transform: translateY(-142%, 18%);
+      transform: translateY(-142%, -4%);
     }
 
     header {
@@ -187,6 +196,8 @@
         background-color: #ed8fe4;
         // border: 12px solid #ed8fe4;
         width: 100%;
+        height: -webkit-max-content;
+        height: -moz-max-content;
         height: max-content;
 
         .first_comment {
@@ -241,6 +252,22 @@
               outline: none;
             }
 
+            input::-webkit-input-placeholder {
+              color: #000000;
+            }
+
+            input::-moz-placeholder {
+              color: #000000;
+            }
+
+            input:-ms-input-placeholder {
+              color: #000000;
+            }
+
+            input::-ms-input-placeholder {
+              color: #000000;
+            }
+
             input::placeholder {
               color: #000000;
             }
@@ -252,11 +279,13 @@
         display: flex;
         flex-wrap: wrap;
         background-color: #ed8fe4;
+        padding: 60px 0;
+        row-gap: 20px;
 
         .video {
           width: 33%;
+          height: 143px;
           text-align: center;
-          margin: 60px 0 0 0;
           // transition: all 0.2s ease-in-out;
           cursor: pointer;
 
@@ -274,18 +303,24 @@
         }
       }
 
-      .video_on {
-        width: 80%;
-        height: auto;
+      .videoPlayer {
+        z-index: 1;
         position: absolute;
+        width: 90%;
+        height: 90%;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+
+        .ytb-title-text {
+          font-size: 5px;
+        }
       }
     }
   }
 
   .blog_right {
+    position: relative;
     width: 20%;
     text-align: center;
     margin: 20px;
@@ -313,9 +348,9 @@
       width: 42px;
       height: 42px;
       position: absolute;
-      left: 97%;
-      top: 13%;
-      transform: translateY(-97%, 13%);
+      left: 93%;
+      top: 10%;
+      transform: translateY(-93%, 10%);
     }
 
     .input_global {
@@ -336,6 +371,18 @@
       outline: 0;
       background-color: transparent;
     }
+    input::-webkit-input-placeholder {
+      color: #ffffff;
+    }
+    input::-moz-placeholder {
+      color: #ffffff;
+    }
+    input:-ms-input-placeholder {
+      color: #ffffff;
+    }
+    input::-ms-input-placeholder {
+      color: #ffffff;
+    }
     input::placeholder {
       color: #ffffff;
     }
@@ -352,7 +399,7 @@
       width: 86px;
       height: 87px;
       position: absolute;
-      left: 92%;
+      left: 70%;
       top: 50%;
       transform: translateY(-92%, 50%);
     }
@@ -363,17 +410,17 @@
       width: 83px;
       height: 83px;
       position: absolute;
-      left: 78%;
+      left: -10%;
       top: 118%;
-      transform: translateY(-92%, 50%);
+      transform: translateY(-10%, 118%);
     }
     .jewel04 {
       width: 83px;
       height: 78px;
       position: absolute;
-      left: 93%;
-      top: 160%;
-      transform: translateY(-92%, 50%);
+      left: 74%;
+      top: 166%;
+      transform: translateY(-166%, 74%);
     }
   }
 }

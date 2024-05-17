@@ -1,14 +1,50 @@
-.notepad {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: white;
+.appContainer {
+  width: 600px;
+  height: 400px;
+  background: linear-gradient(
+    to right,
+    rgb(237, 237, 229) 0%,
+    rgb(237, 232, 205) 100%
+  );
   display: flex;
   flex-direction: column;
-}
+  align-items: stretch;
 
-.title {
-  font-size: 0.7em;
-  text-align: left;
-  align-items: center;
+  .toolbar {
+    position: relative;
+    height: 21px;
+    flex-shrink: 0;
+    border-bottom: 1px solid white;
+
+    .toolbarList {
+      display: inline-flex;
+      height: 20px;
+      line-height: 20px;
+      position: relative;
+
+      div {
+        padding: 0px 7px;
+        cursor: default;
+        font-size: 0.8rem;
+
+        &:hover {
+          background-color: rgb(22, 96, 232);
+          color: white;
+        }
+      }
+    }
+  }
+
+  .textZone {
+    flex: 1 1 auto;
+    outline: none;
+    font-family: "Lucida Console", monospace;
+    font-size: 13px;
+    line-height: 14px;
+    resize: none;
+    padding: 2px;
+    white-space: nowrap;
+    overflow: scroll;
+    border: 1px solid rgb(150, 171, 255);
+  }
 }

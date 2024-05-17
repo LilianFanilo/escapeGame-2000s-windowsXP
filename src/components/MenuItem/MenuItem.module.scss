@@ -2,9 +2,9 @@
   height: 34px;
   padding: 1px;
   display: flex;
-  -webkit-box-align: center;
   align-items: center;
   margin-bottom: 4px;
+  cursor: default;
 
   img {
     margin-right: 3px;
@@ -15,7 +15,6 @@
   .MenuItem_texts {
     display: flex;
     flex-direction: column;
-    -webkit-box-pack: center;
     justify-content: center;
     height: 100%;
     position: relative;

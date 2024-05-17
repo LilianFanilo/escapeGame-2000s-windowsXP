@@ -1,7 +1,10 @@
 .ButtonSystem {
   display: flex;
   align-items: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
   height: fit-content;
+  cursor: default;
 
   &:hover {
     background-color: rgba(60, 80, 210, 0.5);
@@ -9,6 +12,7 @@
 
   &.ButtonSystemBig {
     padding: 5px;
+    -moz-column-gap: 10px;
     column-gap: 10px;
 
     img {
