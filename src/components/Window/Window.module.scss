@@ -119,7 +119,7 @@
         background-color: white;
       }
 
-      .window_maximise {
+      .window_maximize {
         box-shadow: rgb(70, 70, 255) 0px -1px 2px 1px inset;
         background-image: radial-gradient(
           circle at 90% 90%,
@@ -137,11 +137,11 @@
         border-radius: 3px;
       }
 
-      .window_maximise:hover {
+      .window_maximize:hover {
         filter: brightness(120%);
       }
 
-      .window_maximise::before {
+      .window_maximize::before {
         content: "";
         position: absolute;
         display: block;
@@ -154,20 +154,20 @@
         width: 12px;
       }
 
-      .window_maximise::after {
-        content: "";
-        position: absolute;
-        display: block;
-        left: 4px;
-        top: 7px;
-        box-shadow:
-          white 0px 2px inset,
-          white 0px 0px 0px 1px inset,
-          rgb(19, 109, 255) 1px -1px;
-        height: 8px;
-        width: 8px;
-        background-color: rgb(19, 109, 255);
-      }
+      // .window_maximize::after {
+      //   content: "";
+      //   position: absolute;
+      //   display: block;
+      //   left: 4px;
+      //   top: 7px;
+      //   box-shadow:
+      //     white 0px 2px inset,
+      //     white 0px 0px 0px 1px inset,
+      //     rgb(19, 109, 255) 1px -1px;
+      //   height: 8px;
+      //   width: 8px;
+      //   background-color: rgb(19, 109, 255);
+      // }
 
       .window_button {
         box-shadow: rgb(218, 70, 0) 0px -1px 2px 1px inset;
