@@ -15,6 +15,13 @@
       li {
         list-style: none;
         padding: 10px;
+
+        cursor: default;
+
+        &:hover {
+          background-color: rgb(22, 96, 232);
+          color: white;
+        }
       }
     }
   }
@@ -100,6 +107,30 @@
         justify-content: space-between;
         height: 50%;
 
+        .nextBackBtn {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          -moz-column-gap: 8px;
+          column-gap: 8px;
+          padding-left: 20px;
+
+          button {
+            display: flex;
+            width: -webkit-fit-content;
+            width: -moz-fit-content;
+            width: fit-content;
+            height: -webkit-fit-content;
+            height: -moz-fit-content;
+            height: fit-content;
+            justify-content: center;
+            align-items: center;
+            padding: 5px 10px;
+            background-color: #fdc1f7;
+            border-radius: 10px;
+          }
+        }
+
         .volumeContainer {
           display: flex;
           align-items: center;
@@ -129,6 +160,7 @@
             transition: opacity 0.2s;
             cursor: pointer;
             accent-color: black;
+            width: 88px;
 
             &::-webkit-slider-runnable-track {
               height: 6px;
@@ -156,5 +188,9 @@
     background-color: #fdc1f7;
     border-radius: 10px;
     box-shadow: 0 1px 2px #680c5e;
+  }
+
+  button {
+    cursor: pointer;
   }
 }

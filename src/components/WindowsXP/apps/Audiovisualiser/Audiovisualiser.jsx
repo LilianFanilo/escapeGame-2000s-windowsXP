@@ -123,6 +123,16 @@ const Audiovisualiser = () => {
               </button>
             </div>
             <div className={s.btnContainer}>
+              <div className={s.nextBackBtn}>
+                <button>
+                  {" "}
+                  <img src="/images/audiovisualiser/btn_previous.svg" alt="" />
+                </button>
+                <button>
+                  {" "}
+                  <img src="/images/audiovisualiser/btn_next.svg" alt="" />
+                </button>
+              </div>
               <div className={s.volumeContainer}>
                 {/* Volume Mute */}
                 <button id="btnMute" className={s.btnMute} onClick={muteVolume}>
