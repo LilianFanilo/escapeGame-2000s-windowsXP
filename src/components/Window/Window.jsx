@@ -3,7 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
 
-export default function Window({ onClose, children }) {
+export default function Window({ onClose, children, appName, appIcon }) {
   // Valeur 500 500 afin de ne pas voir la window se déplacer
   const [windowPosition, setWindowPosition] = useState({ x: 500, y: 500 });
   const [isDragging, setIsDragging] = useState(false);
@@ -87,11 +87,11 @@ export default function Window({ onClose, children }) {
         <header className={s.window_header} onClick={handleHeaderClick}>
           <img
             draggable="false"
-            src={error}
+            src={appIcon}
             className={s.window_header_icon}
-            alt=""
+            alt={`${appName} icon`}
           />
-          <div className={s.window_header_title}>C:\</div>
+          <div className={s.window_header_title}>{appName}</div>
           <div className={s.window_close}>
             <button
               className={s.window_minimize}

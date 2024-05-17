@@ -2,6 +2,7 @@ import { Suspense, useRef, useState } from "react";
 import ReactPlayer from "react-player";
 import s from "./Blog.module.scss";
 import Window from "../../../Window/Window";
+import blog_icon from "../../../../assets/WindowsIcons/blog_icone.png";
 
 export default function Blog() {
   const [inputVisible, setInputVisible] = useState(false);
@@ -29,7 +30,7 @@ export default function Blog() {
 
   return (
     <>
-      <Window>
+      <Window appName="Blog" appIcon={blog_icon}>
         <div className={s.blog}>
           <div className={s.blog_left}>
             <img
