@@ -136,7 +136,9 @@ const Audiovisualiser = () => {
               <div className={s.volumeContainer}>
                 {/* Volume Mute */}
                 <button id="btnMute" className={s.btnMute} onClick={muteVolume}>
-                  {isMuted && "Mute"}
+                  {isMuted && (
+                    <img src="/images/audiovisualiser/btn_mute.svg" alt="" />
+                  )}
                   {!isMuted && (
                     <img src="/images/audiovisualiser/btn_audio.svg" alt="" />
                   )}
@@ -152,7 +154,7 @@ const Audiovisualiser = () => {
                   onChange={changeVolume}
                 />
               </div>
-              <div>
+              <div className={s.musicName}>
                 <span>Nom Chanson</span>
               </div>
             </div>
