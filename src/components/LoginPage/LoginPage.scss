@@ -6,10 +6,16 @@
   display: block !important;
 }
 
-.pwdHint {
+.pwdHint1 {
   display: none;
   position: absolute;
   top: 21px;
+}
+
+.pwdHint2 {
+  display: none;
+  position: absolute;
+  top: 43px;
 }
 
 .pwdError {
