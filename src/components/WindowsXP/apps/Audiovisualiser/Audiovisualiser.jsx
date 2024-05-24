@@ -87,7 +87,7 @@ const Audiovisualiser = () => {
         {/* Appel de la vidéo */}
         <video
           id="myVideo"
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          src="https://www.youtube.com/watch?v=1J4sfajkSB"
           onTimeUpdate={updateProgressBar}
         ></video>
 
@@ -136,7 +136,9 @@ const Audiovisualiser = () => {
               <div className={s.volumeContainer}>
                 {/* Volume Mute */}
                 <button id="btnMute" className={s.btnMute} onClick={muteVolume}>
-                  {isMuted && "Mute"}
+                  {isMuted && (
+                    <img src="/images/audiovisualiser/btn_mute.svg" alt="" />
+                  )}
                   {!isMuted && (
                     <img src="/images/audiovisualiser/btn_audio.svg" alt="" />
                   )}
@@ -152,8 +154,8 @@ const Audiovisualiser = () => {
                   onChange={changeVolume}
                 />
               </div>
-              <div>
-                <span>Nom Chanson</span>
+              <div className={s.musicName}>
+                <span>Allo Elo</span>
               </div>
             </div>
           </div>

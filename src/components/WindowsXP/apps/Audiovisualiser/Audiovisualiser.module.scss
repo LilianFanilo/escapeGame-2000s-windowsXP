@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   background-color: white;
-  min-width: 616px;
+  width: 616px;
+
   font-family: "Inter", sans-serif;
 
   nav {
@@ -100,6 +101,20 @@
           border-radius: 0;
           background-color: #ec70a0;
         }
+
+        progress[value]::-webkit-progress-value {
+          background-image: -webkit-linear-gradient(left, #fdc1f7, #fdc1f7);
+
+          background-size:
+            35px 20px,
+            100% 100%,
+            100% 100%;
+        }
+
+        progress[value]::-webkit-progress-bar {
+          background-color: #ec70a0;
+          box-shadow: 0 20px 4px rgba(255, 255, 255, 0.32) inset;
+        }
       }
 
       .btnContainer {
@@ -177,11 +192,20 @@
               background: black; /* Green background */
               cursor: pointer; /* Cursor on hover */
               box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+              margin-top: -2px;
+              border-radius: 1px;
             }
           }
         }
       }
     }
+  }
+
+  .musicName {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
   }
 
   .pinkBtn {

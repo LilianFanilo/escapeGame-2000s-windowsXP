@@ -53,8 +53,12 @@ function LoginPage() {
             pwdErrorDisplay.classList.add("is_visible");
             console.log("Login failed: ", json.message);
           }
+          if (pwdError >= 3) {
+            let pwdHint = document.querySelector(".pwdHint1");
+            pwdHint.classList.add("is_visible");
+          }
           if (pwdError >= 5) {
-            let pwdHint = document.querySelector(".pwdHint");
+            let pwdHint = document.querySelector(".pwdHint2");
             pwdHint.classList.add("is_visible");
           }
           document.body.style.cursor = "default";
@@ -158,7 +162,8 @@ function ProfileLogin(props) {
               </div>
               <div className="pwdContainer">
                 <div className="pwdError">Mauvais mot de passe...</div>
-                <div className="pwdHint">Indice : Remets-toi en question</div>
+                <div className="pwdHint1">Indice : Britney la BEST!</div>
+                <div className="pwdHint2">Indice : Regarde le calendrier</div>
               </div>
             </div>
           </div>

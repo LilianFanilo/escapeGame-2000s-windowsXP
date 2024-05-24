@@ -48,6 +48,7 @@
     width: 20%;
     margin: 10px;
     text-align: center;
+    user-select: none;
 
     .logo {
       padding-top: 20px;
@@ -145,6 +146,7 @@
       left: 63%;
       top: 4%;
       transform: translateY(-4%, 63%);
+      user-select: none;
     }
 
     .jewel02 {
@@ -154,6 +156,7 @@
       left: 90%;
       top: 13%;
       transform: translateY(13%, 90%);
+      user-select: none;
     }
 
     .jewel03 {
@@ -163,6 +166,7 @@
       left: -4%;
       top: 142%;
       transform: translateY(-142%, -4%);
+      user-select: none;
     }
 
     header {
@@ -237,6 +241,7 @@
               width: 37px;
               height: 32px;
               margin-right: 6px;
+              user-select: none;
             }
 
             .input_comment {
@@ -324,6 +329,7 @@
     width: 20%;
     text-align: center;
     margin: 20px;
+    user-select: none;
 
     .image01 {
       display: flex;
