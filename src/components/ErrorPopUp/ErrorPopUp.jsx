@@ -3,7 +3,7 @@ import s from "./ErrorPopUp.module.scss";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
 
-export default function ErrorPopUp({ onClose }) {
+export default function ErrorPopUp({ onClose, errorContent, errorTextBtn }) {
   const [windowPosition, setWindowPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
@@ -84,12 +84,16 @@ export default function ErrorPopUp({ onClose }) {
               />
               <div className={s.error_messages}>
                 <p className={s.error_message}>C:\</p>
-                <p className={s.error_message}>Application not found</p>
+                <p className={s.error_message}>
+                  {errorContent ? errorContent : "Application not found"}
+                </p>
               </div>
             </div>
             <div className={s.error_bottom}>
               <div className={s.error_button} onClick={handleConfirmClick}>
-                <span className={s.error_confirm}>OK</span>
+                <span className={s.error_confirm}>
+                  {errorTextBtn ? errorTextBtn : "OK"}
+                </span>
               </div>
             </div>
           </div>

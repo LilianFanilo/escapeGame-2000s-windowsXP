@@ -80,6 +80,12 @@ function WindowsXP() {
           <img draggable="false" height={30} width={30} src={doc_icon} alt="" />
           <span className={s.title}>Documents</span>
         </div>
+        {docVisible && (
+          <ErrorPopUp
+            errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
+            errorTextBtn={"Désolé..."}
+          />
+        )}
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
 
         <div className={s.app_icon} onDoubleClick={handleBlogIconDoubleClick}>
@@ -94,6 +100,7 @@ function WindowsXP() {
         </div>
         {/* Affichage du composant Blog lorsque blogVisible est true */}
         {blogVisible && <Blog />}
+        {/* {blogVisible && <PopUp />} */}
 
         <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
           <img

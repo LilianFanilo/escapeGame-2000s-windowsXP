@@ -87,7 +87,7 @@ const Audiovisualiser = () => {
         {/* Appel de la vidéo */}
         <video
           id="myVideo"
-          src="https://www.w3schools.com/html/mov_bbb.mp4"
+          src="https://www.youtube.com/watch?v=1J4sfajkSB"
           onTimeUpdate={updateProgressBar}
         ></video>
 
@@ -155,7 +155,7 @@ const Audiovisualiser = () => {
                 />
               </div>
               <div className={s.musicName}>
-                <span>Nom Chanson</span>
+                <span>Allo Elo</span>
               </div>
             </div>
           </div>
