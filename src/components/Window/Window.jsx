@@ -119,7 +119,12 @@ export default function Window({ onClose, children, appName, appIcon }) {
             ></button>
           </div>
         </header>
-        <div className={s.window_content}>{children}</div>
+        <div
+          className={s.window_content}
+          onMouseDown={(e) => e.stopPropagation()}
+        >
+          {children}
+        </div>
       </div>
     </>
   );
