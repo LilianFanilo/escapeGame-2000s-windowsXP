@@ -27,10 +27,16 @@ export default function Blog() {
   const handleImageClick = (index) => {
     const selectedVideoUrl = videoUrls[index];
     setVideoUrl(selectedVideoUrl);
+    setIsWindowOpen(true);
   };
 
   const handleClose = () => {
     setIsWindowOpen(false);
+    setVideoUrl("");
+  };
+
+  const buttonClose = () => {
+    setVideoUrl("");
   };
 
   return (
@@ -232,15 +238,14 @@ export default function Blog() {
                       </div>
                     ))}
                   </div>
-                  {videoUrl && (
-                    <div className={s.videoPlayer}>
-                      <ReactPlayer
-                        url={videoUrl}
-                        controls
-                        width="100%"
-                        height="100%"
-                        playing
-                      />
+                  {isWindowOpen && videoUrl && (
+                    <div className={s.videoModal}>
+                      <div className={s.videoModalContent}>
+                        <button className={s.closeButton} onClick={buttonClose}>
+                          X
+                        </button>
+                        <ReactPlayer url={videoUrl} controls />
+                      </div>
                     </div>
                   )}
                 </div>
