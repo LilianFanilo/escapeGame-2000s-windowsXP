@@ -74,7 +74,7 @@ function WindowsXP() {
           <span className={s.title}>Notepad</span>
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
-        {noteVisible && <Notepad />}
+        {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
 
         <div className={s.app_icon} onDoubleClick={handleDocIconDoubleClick}>
           <img draggable="false" height={30} width={30} src={doc_icon} alt="" />
@@ -99,7 +99,7 @@ function WindowsXP() {
           <span className={s.title}>Blog</span>
         </div>
         {/* Affichage du composant Blog lorsque blogVisible est true */}
-        {blogVisible && <Blog />}
+        {blogVisible && <Blog onClose={() => setBlogVisible(false)} />}
         {/* {blogVisible && <PopUp />} */}
 
         <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
@@ -113,7 +113,9 @@ function WindowsXP() {
           <span className={s.title}>Lecteur audio</span>
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
-        {audioVisible && <Audiovisualiser />}
+        {audioVisible && (
+          <Audiovisualiser onClose={() => setAudioVisible(false)} />
+        )}
         {/* {audioVisible && <PopUp />} */}
       </div>
     </>

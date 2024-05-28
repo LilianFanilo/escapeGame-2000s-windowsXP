@@ -72,9 +72,9 @@ export default function Window({ onClose, children, appName, appIcon }) {
     e.stopPropagation();
   };
 
-  const handleConfirmClick = () => {
-    onClose();
-  };
+  // const handleConfirmClick = () => {
+  //   onClose();
+  // };
 
   return (
     <>
@@ -105,18 +105,9 @@ export default function Window({ onClose, children, appName, appIcon }) {
           />
           <div className={s.window_header_title}>{appName}</div>
           <div className={s.window_close}>
-            <button
-              className={s.window_minimize}
-              onClick={handleConfirmClick}
-            ></button>
-            <button
-              className={s.window_maximize}
-              onClick={handleConfirmClick}
-            ></button>
-            <button
-              className={s.window_button}
-              onClick={handleConfirmClick}
-            ></button>
+            <button className={s.window_minimize} onClick={onClose}></button>
+            <button className={s.window_maximize} onClick={onClose}></button>
+            <button className={s.window_button} onClick={onClose}></button>
           </div>
         </header>
         <div

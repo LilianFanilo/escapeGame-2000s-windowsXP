@@ -1,10 +1,10 @@
 import Window from "../../../Window/Window";
 import s from "./Notepad.module.scss";
 
-export default function Notepad() {
+export default function Notepad({ onClose }) {
   return (
     <>
-      <Window>
+      <Window onClose={onClose}>
         <div className={s.appContainer}>
           <section className={s.toolbar}>
             <div className={s.toolbarList}>

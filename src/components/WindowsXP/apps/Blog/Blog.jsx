@@ -4,7 +4,7 @@ import s from "./Blog.module.scss";
 import Window from "../../../Window/Window";
 import blog_icon from "../../../../assets/WindowsIcons/blog_icone.png";
 
-export default function Blog() {
+export default function Blog({ onClose }) {
   const [inputVisible, setInputVisible] = useState(false);
   const [activeSection, setActiveSection] = useState("Accueil");
   const [videoUrl, setVideoUrl] = useState("");
@@ -42,7 +42,7 @@ export default function Blog() {
   return (
     <>
       {isWindowOpen && (
-        <Window onClose={handleClose} appName="Blog" appIcon={blog_icon}>
+        <Window onClose={onClose} appName="Blog" appIcon={blog_icon}>
           <div className={s.blog}>
             <div className={s.blog_left}>
               <img
