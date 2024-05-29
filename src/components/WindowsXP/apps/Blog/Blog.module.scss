@@ -397,9 +397,9 @@
       width: 20%;
       align-items: center;
       width: auto;
-      height: auto;
+      height: 100%;
       // padding: 13px;
-      padding: 13px;
+      padding: 1rem;
       background-color: #e905d2;
     }
     .jewel02 {
@@ -446,7 +446,6 @@
 
 .videoModalContent {
   position: relative;
-  width: 80%;
   max-width: 800px;
   background: #ed8fe4;
   padding: 20px;

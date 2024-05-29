@@ -20,6 +20,7 @@ function WindowsXP() {
   const [docVisible, setDocVisible] = useState(false);
   const [blogVisible, setBlogVisible] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
+  const [errorVisible, setErrorVisible] = useState(false);
 
   const handleTrashIconDoubleClick = () => {
     setTrashVisible(true);
@@ -39,6 +40,10 @@ function WindowsXP() {
 
   const handleAudioIconDoubleClick = () => {
     setAudioVisible(true);
+  };
+
+  const handleErrorIconDoubleClick = () => {
+    setErrorVisible(true);
   };
 
   return (
@@ -82,7 +87,7 @@ function WindowsXP() {
         </div>
         {docVisible && (
           <ErrorPopUp
-            onClose={() => setBlogVisible(false)}
+            onClose={() => setErrorVisible(false)}
             errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
             errorTextBtn={"Désolé..."}
           />
