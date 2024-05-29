@@ -82,6 +82,7 @@ function WindowsXP() {
         </div>
         {docVisible && (
           <ErrorPopUp
+            onClose={() => setBlogVisible(false)}
             errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
             errorTextBtn={"Désolé..."}
           />
