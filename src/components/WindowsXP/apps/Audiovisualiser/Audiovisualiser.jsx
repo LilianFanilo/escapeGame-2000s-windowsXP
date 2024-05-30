@@ -91,7 +91,7 @@ const Audiovisualiser = ({ onClose }) => {
         {/* Appel de la vidéo */}
         <video
           id="myVideo"
-          src="https://www.youtube.com/watch?v=1J4sfajkSB"
+          src="/public/videos/audio_vid.mp4"
           onTimeUpdate={updateProgressBar}
         ></video>
 
