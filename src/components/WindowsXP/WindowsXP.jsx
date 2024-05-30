@@ -12,7 +12,7 @@ import doc_icon from "../../assets/WindowsIcons/doc_icon.png";
 import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 import Window from "../Window/Window";
-import PopUp from "../PopUp/PopUp";
+import PopupContainer from "../PopUp/PopUp";
 
 function WindowsXP() {
   const [trashVisible, setTrashVisible] = useState(false);
@@ -20,6 +20,7 @@ function WindowsXP() {
   const [docVisible, setDocVisible] = useState(false);
   const [blogVisible, setBlogVisible] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
+  const [popUpVisible, setPopUpVisible] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
 
   const handleTrashIconDoubleClick = () => {
@@ -40,6 +41,7 @@ function WindowsXP() {
 
   const handleAudioIconDoubleClick = () => {
     setAudioVisible(true);
+    setPopUpVisible(true);
   };
 
   const handleErrorIconDoubleClick = () => {
@@ -106,7 +108,7 @@ function WindowsXP() {
         </div>
         {/* Affichage du composant Blog lorsque blogVisible est true */}
         {blogVisible && <Blog onClose={() => setBlogVisible(false)} />}
-        {/* {blogVisible && <PopUp />} */}
+        {blogVisible && <PopupContainer />}
 
         <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
           <img
@@ -122,7 +124,7 @@ function WindowsXP() {
         {audioVisible && (
           <Audiovisualiser onClose={() => setAudioVisible(false)} />
         )}
-        {/* {audioVisible && <PopUp />} */}
+        {audioVisible && <PopupContainer />}
       </div>
     </>
   );

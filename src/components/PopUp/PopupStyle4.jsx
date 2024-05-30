@@ -3,12 +3,13 @@ import Window from "../Window/Window";
 import s from "./PopUp.module.scss";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 
-const PopupStyle4 = () => {
+const PopupStyle4 = ({ onClose }) => {
   var audio = new Audio("/audios/sncf.mp3");
   audio.play();
 
   return (
     <Window
+      onClose={onClose}
       appName="SNCF Voyager avec rapidité et tranquillité"
       appIcon={audiovisualiser_icon}
     >

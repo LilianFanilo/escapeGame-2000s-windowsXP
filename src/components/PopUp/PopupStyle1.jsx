@@ -3,12 +3,13 @@ import Window from "../Window/Window";
 import s from "./PopUp.module.scss";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 
-const PopupStyle1 = () => {
+const PopupStyle1 = ({ onClose }) => {
   var audio = new Audio("/audios/chocapic.mp3");
   audio.play();
 
   return (
     <Window
+      onClose={onClose}
       appName="Chocapic c'est fort en chocolat!"
       appIcon={audiovisualiser_icon}
     >
