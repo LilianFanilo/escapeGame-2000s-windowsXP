@@ -4,8 +4,8 @@ import s from "./PopUp.module.scss";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 
 const PopupStyle2 = ({ onClose }) => {
-  var audio = new Audio("/audios/avast.mp3");
-  audio.play();
+  // var audio = new Audio("/audios/avast.mp3");
+  // audio.play();
 
   return (
     <Window

@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Window from "../Window/Window";
 import s from "./PopUp.module.scss";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
+import { Howl, Howler } from "howler";
 
 const PopupStyle1 = ({ onClose }) => {
-  var audio = new Audio("/audios/chocapic.mp3");
-  audio.play();
+  // let audio = new Audio("/audios/chocapic.mp3");
+  // audio.play();
 
   return (
     <Window
