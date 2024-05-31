@@ -4,7 +4,7 @@ import s from "./Blog.module.scss";
 import Window from "../../../Window/Window";
 import blog_icon from "../../../../assets/WindowsIcons/blog_icone.png";
 
-export default function Blog() {
+export default function Blog({ onClose }) {
   const [inputVisible, setInputVisible] = useState(false);
   const [activeSection, setActiveSection] = useState("Accueil");
   const [videoUrl, setVideoUrl] = useState("");
@@ -20,23 +20,43 @@ export default function Blog() {
 
   const videoUrls = [
     "https://vimeo.com/939092771?share=copy",
-    "https://youtu.be/pSlzuaosXzY",
-    "https://youtu.be/lGaGkWisEx8",
+    "https://vimeo.com/939092660?share=copy",
+    "https://vimeo.com/939092730?share=copy",
+    "https://vimeo.com/939092683?share=copy",
+    "https://vimeo.com/951649490?share=copy",
+    "https://vimeo.com/951649395?share=copy",
+    "https://vimeo.com/939092753?share=copy",
+    "https://vimeo.com/939092598?share=copy",
+    "https://vimeo.com/951650104?share=copy",
+    "https://vimeo.com/939092705?share=copy",
+    "https://vimeo.com/939092630?share=copy",
+    "https://vimeo.com/951645886?share=copy",
+    "https://vimeo.com/951649680?share=copy",
+    "https://vimeo.com/951650154?share=copy",
+    "https://vimeo.com/951649767?share=copy",
+    "https://vimeo.com/951650029?share=copy",
+    "https://vimeo.com/951649848?share=copy",
   ];
 
   const handleImageClick = (index) => {
     const selectedVideoUrl = videoUrls[index];
     setVideoUrl(selectedVideoUrl);
+    setIsWindowOpen(true);
   };
 
   const handleClose = () => {
     setIsWindowOpen(false);
+    setVideoUrl("");
+  };
+
+  const buttonClose = () => {
+    setVideoUrl("");
   };
 
   return (
     <>
       {isWindowOpen && (
-        <Window onClose={handleClose} appName="Blog" appIcon={blog_icon}>
+        <Window onClose={onClose} appName="Blog" appIcon={blog_icon}>
           <div className={s.blog}>
             <div className={s.blog_left}>
               <img
@@ -232,15 +252,14 @@ export default function Blog() {
                       </div>
                     ))}
                   </div>
-                  {videoUrl && (
-                    <div className={s.videoPlayer}>
-                      <ReactPlayer
-                        url={videoUrl}
-                        controls
-                        width="100%"
-                        height="100%"
-                        playing
-                      />
+                  {isWindowOpen && videoUrl && (
+                    <div className={s.videoModal}>
+                      <div className={s.videoModalContent}>
+                        <button className={s.closeButton} onClick={buttonClose}>
+                          X
+                        </button>
+                        <ReactPlayer url={videoUrl} controls />
+                      </div>
                     </div>
                   )}
                 </div>

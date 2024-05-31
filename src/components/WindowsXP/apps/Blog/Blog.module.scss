@@ -325,6 +325,7 @@
   }
 
   .blog_right {
+    z-index: -1;
     position: relative;
     width: 20%;
     text-align: center;
@@ -396,9 +397,9 @@
       width: 20%;
       align-items: center;
       width: auto;
-      height: auto;
+      height: 100%;
       // padding: 13px;
-      padding: 13px;
+      padding: 1rem;
       background-color: #e905d2;
     }
     .jewel02 {
@@ -429,4 +430,42 @@
       transform: translateY(-166%, 74%);
     }
   }
+}
+
+.videoModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.videoModalContent {
+  position: relative;
+  max-width: 800px;
+  background: #ed8fe4;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.videoPlayer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

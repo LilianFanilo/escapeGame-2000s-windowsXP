@@ -1,6 +1,4 @@
 import React, { useState, useEffect } from "react";
-
-// Import des différents composants de popup
 import PopupStyle1 from "./PopupStyle1";
 import PopupStyle2 from "./PopupStyle2";
 import PopupStyle3 from "./PopupStyle3";
@@ -11,12 +9,10 @@ const PopupContainer = () => {
   const [popups, setPopups] = useState([]);
 
   useEffect(() => {
-    // Fonction pour générer un nombre aléatoire entre min et max
     const getRandomInt = (min, max) => {
       return Math.floor(Math.random() * (max - min + 1)) + min;
     };
 
-    // Fonction pour générer une popup aléatoire
     const generateRandomPopup = () => {
       const popupStyles = [
         PopupStyle1,
@@ -27,10 +23,10 @@ const PopupContainer = () => {
       ];
       const randomStyleIndex = getRandomInt(0, popupStyles.length - 1);
       const PopupComponent = popupStyles[randomStyleIndex];
-      return <PopupComponent />;
+      const id = new Date().getTime() + Math.random(); // Générer un ID unique
+      return { id, component: PopupComponent };
     };
 
-    // Générer une popup aléatoire toutes les 5 à 10 secondes
     const interval = setInterval(
       () => {
         const newPopup = generateRandomPopup();
@@ -42,11 +38,20 @@ const PopupContainer = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const handleClosePopup = (id) => {
+    setPopups((prevPopups) => prevPopups.filter((popup) => popup.id !== id));
+  };
+
   return (
     <div>
-      {popups.map((popup, index) => (
-        <div key={index}>{popup}</div>
-      ))}
+      {popups.map((popup) => {
+        const PopupComponent = popup.component;
+        return (
+          <div key={popup.id}>
+            <PopupComponent onClose={() => handleClosePopup(popup.id)} />
+          </div>
+        );
+      })}
     </div>
   );
 };

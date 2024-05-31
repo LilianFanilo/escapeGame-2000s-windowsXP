@@ -12,7 +12,7 @@ import doc_icon from "../../assets/WindowsIcons/doc_icon.png";
 import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
 import Window from "../Window/Window";
-import PopUp from "../PopUp/PopUp";
+import PopupContainer from "../PopUp/PopUp";
 
 function WindowsXP() {
   const [trashVisible, setTrashVisible] = useState(false);
@@ -20,6 +20,8 @@ function WindowsXP() {
   const [docVisible, setDocVisible] = useState(false);
   const [blogVisible, setBlogVisible] = useState(false);
   const [audioVisible, setAudioVisible] = useState(false);
+  const [popUpVisible, setPopUpVisible] = useState(false);
+  const [errorVisible, setErrorVisible] = useState(false);
 
   const handleTrashIconDoubleClick = () => {
     setTrashVisible(true);
@@ -39,6 +41,11 @@ function WindowsXP() {
 
   const handleAudioIconDoubleClick = () => {
     setAudioVisible(true);
+    setPopUpVisible(true);
+  };
+
+  const handleErrorIconDoubleClick = () => {
+    setErrorVisible(true);
   };
 
   return (
@@ -74,7 +81,7 @@ function WindowsXP() {
           <span className={s.title}>Notepad</span>
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
-        {noteVisible && <Notepad />}
+        {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
 
         <div className={s.app_icon} onDoubleClick={handleDocIconDoubleClick}>
           <img draggable="false" height={30} width={30} src={doc_icon} alt="" />
@@ -82,6 +89,7 @@ function WindowsXP() {
         </div>
         {docVisible && (
           <ErrorPopUp
+            onClose={() => setErrorVisible(false)}
             errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
             errorTextBtn={"Désolé..."}
           />
@@ -99,8 +107,8 @@ function WindowsXP() {
           <span className={s.title}>Blog</span>
         </div>
         {/* Affichage du composant Blog lorsque blogVisible est true */}
-        {blogVisible && <Blog />}
-        {/* {blogVisible && <PopUp />} */}
+        {blogVisible && <Blog onClose={() => setBlogVisible(false)} />}
+        {blogVisible && <PopupContainer />}
 
         <div className={s.app_icon} onDoubleClick={handleAudioIconDoubleClick}>
           <img
@@ -113,8 +121,10 @@ function WindowsXP() {
           <span className={s.title}>Lecteur audio</span>
         </div>
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
-        {audioVisible && <Audiovisualiser />}
-        {/* {audioVisible && <PopUp />} */}
+        {audioVisible && (
+          <Audiovisualiser onClose={() => setAudioVisible(false)} />
+        )}
+        {audioVisible && <PopupContainer />}
       </div>
     </>
   );

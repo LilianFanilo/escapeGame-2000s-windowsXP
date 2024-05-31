@@ -3,7 +3,7 @@ import s from "./Audiovisualiser.module.scss";
 import Window from "../../../Window/Window";
 import audiovisualiser_icon from "../../../../assets/WindowsIcons/audiovisualiser_icon.png";
 
-const Audiovisualiser = () => {
+const Audiovisualiser = ({ onClose }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
 
@@ -73,7 +73,11 @@ const Audiovisualiser = () => {
   };
 
   return (
-    <Window appName="Lecteur audio" appIcon={audiovisualiser_icon}>
+    <Window
+      onClose={onClose}
+      appName="Lecteur audio"
+      appIcon={audiovisualiser_icon}
+    >
       <div className={s.audiovisualiser}>
         <nav>
           <ul>
@@ -87,7 +91,7 @@ const Audiovisualiser = () => {
         {/* Appel de la vidéo */}
         <video
           id="myVideo"
-          src="https://www.youtube.com/watch?v=1J4sfajkSB"
+          src="/public/videos/audio_vid.mp4"
           onTimeUpdate={updateProgressBar}
         ></video>
 
