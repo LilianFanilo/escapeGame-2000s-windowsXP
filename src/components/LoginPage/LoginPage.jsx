@@ -143,6 +143,7 @@ function ProfileLogin(props) {
                   name="loginPWD"
                   id="loginPassword"
                   draggable="false"
+                  placeholder="JJMMAAAA"
                 />
                 <img
                   id="accessOffice"
