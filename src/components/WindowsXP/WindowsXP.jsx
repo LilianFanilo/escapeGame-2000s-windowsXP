@@ -83,15 +83,16 @@ function WindowsXP() {
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
         {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
 
-        <div className={s.app_icon} onDoubleClick={handleDocIconDoubleClick}>
+        <div className={s.app_icon} onDoubleClick={handleErrorIconDoubleClick}>
           <img draggable="false" height={30} width={30} src={doc_icon} alt="" />
           <span className={s.title}>Documents</span>
         </div>
-        {docVisible && (
+        {errorVisible && (
           <ErrorPopUp
             onClose={() => setErrorVisible(false)}
             errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
             errorTextBtn={"Désolé..."}
+            errorAudio={"/audios/ELO.m4a"}
           />
         )}
         {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
