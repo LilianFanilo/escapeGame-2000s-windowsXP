@@ -80,7 +80,6 @@ function WindowsXP() {
           />
           <span className={s.title}>Notepad</span>
         </div>
-        {/* Affichage du composant lecteur audio lorsque blogVisible est true */}
         {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
 
         <div className={s.app_icon} onDoubleClick={handleErrorIconDoubleClick}>

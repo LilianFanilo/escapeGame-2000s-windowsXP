@@ -5,6 +5,7 @@ function MenuItem(props) {
     <>
       <div
         className={`${s.MenuItem} ${props.smallSize ? s.MenuItem_Small : ""}`}
+        onClick={props.onClick}
       >
         <img src={props.itemImg} alt={props.imgAlt} draggable="false" />
         <div
