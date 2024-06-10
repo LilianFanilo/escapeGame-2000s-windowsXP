@@ -9,6 +9,7 @@ body {
   height: 100vh;
   overflow-y: hidden;
   overflow-x: hidden;
+  user-select: none;
 }
 
 #root {
