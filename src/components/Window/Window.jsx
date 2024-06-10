@@ -3,7 +3,13 @@ import { useEffect, useRef, useState } from "react";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
 
-export default function Window({ onClose, children, appName, appIcon }) {
+export default function Window({
+  onClose,
+  children,
+  appName,
+  appIcon,
+  CloseBtnOnly,
+}) {
   // Valeur 500 500 afin de ne pas voir la window se déplacer
   const [windowPosition, setWindowPosition] = useState({ x: 500, y: 500 });
   const [isDragging, setIsDragging] = useState(false);
@@ -105,8 +111,18 @@ export default function Window({ onClose, children, appName, appIcon }) {
           />
           <div className={s.window_header_title}>{appName}</div>
           <div className={s.window_close}>
-            <button className={s.window_minimize} onClick={onClose}></button>
-            <button className={s.window_maximize} onClick={onClose}></button>
+            {!CloseBtnOnly && (
+              <>
+                <button
+                  className={s.window_minimize}
+                  onClick={onClose}
+                ></button>
+                <button
+                  className={s.window_maximize}
+                  onClick={onClose}
+                ></button>
+              </>
+            )}
             <button className={s.window_button} onClick={onClose}></button>
           </div>
         </header>

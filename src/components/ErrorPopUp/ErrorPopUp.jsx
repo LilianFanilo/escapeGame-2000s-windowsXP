@@ -2,13 +2,22 @@ import { useEffect, useState } from "react";
 import s from "./ErrorPopUp.module.scss";
 import error from "/images/buttons/error.png";
 import error_main from "/images/buttons/error_main.png";
+import Window from "../Window/Window";
 
-export default function ErrorPopUp({ onClose, errorContent, errorTextBtn }) {
+export default function ErrorPopUp({
+  onClose,
+  errorContent,
+  errorTextBtn,
+  errorAudio,
+}) {
   const [windowPosition, setWindowPosition] = useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = useState(false);
   const [initialPosition, setInitialPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    const audio = new Audio(errorAudio);
+    audio.play();
+
     const handleMouseMove = (e) => {
       if (isDragging) {
         const deltaX = e.clientX - initialPosition.x;
@@ -31,6 +40,9 @@ export default function ErrorPopUp({ onClose, errorContent, errorTextBtn }) {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("mouseup", handleMouseUp);
+
+      audio.pause();
+      audio.currentTime = 0;
     };
   }, [isDragging, initialPosition, windowPosition]);
 
@@ -50,29 +62,12 @@ export default function ErrorPopUp({ onClose, errorContent, errorTextBtn }) {
 
   return (
     <>
-      <div
-        className={s.window}
-        style={{
-          transform: `translate(${windowPosition.x}px, ${windowPosition.y}px)`,
-        }}
-        onMouseDown={handleMouseDown}
+      <Window
+        onClose={onClose}
+        appIcon={error_main}
+        appName={"C:\\"}
+        CloseBtnOnly
       >
-        <div className={s.header_bg}></div>
-        <header className={s.window_header} onClick={handleHeaderClick}>
-          <img
-            draggable="false"
-            src={error}
-            className={s.window_header_icon}
-            alt=""
-          />
-          <div className={s.window_header_title}>C:\</div>
-          <div className={s.window_close}>
-            <button
-              className={s.window_button}
-              onClick={handleConfirmClick}
-            ></button>
-          </div>
-        </header>
         <div className={s.window_content}>
           <div className={s.window_main}>
             <div className={s.error_top}>
@@ -98,7 +93,7 @@ export default function ErrorPopUp({ onClose, errorContent, errorTextBtn }) {
             </div>
           </div>
         </div>
-      </div>
+      </Window>
     </>
   );
 }
