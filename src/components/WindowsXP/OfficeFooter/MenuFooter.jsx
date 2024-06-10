@@ -189,7 +189,6 @@ function MenuFooter() {
           </footer>
         </div>
         {isVisible && componentToShow}
-        {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
         {errorVisible && (
           <ErrorPopUp
             onClose={() => setErrorVisible(false)}
@@ -199,6 +198,7 @@ function MenuFooter() {
           />
         )}
       </div>
+      {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
     </>
   );
 }

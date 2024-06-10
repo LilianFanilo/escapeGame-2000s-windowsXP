@@ -29,8 +29,8 @@ function OfficeFooter() {
 
   return (
     <>
+      {isVisible && <MenuFooter />}
       <footer className={s.bottomBar}>
-        {isVisible && <MenuFooter />}
         <div
           className={s.bottomBar_menu}
           onClick={() => setIsVisible(!isVisible)}
