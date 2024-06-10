@@ -4,6 +4,7 @@ import PopupStyle2 from "./PopupStyle2";
 import PopupStyle3 from "./PopupStyle3";
 import PopupStyle4 from "./PopupStyle4";
 import PopupStyle5 from "./PopupStyle5";
+import s from "./PopUp.module.scss";
 
 const PopupContainer = () => {
   const [popups, setPopups] = useState([]);
@@ -43,7 +44,7 @@ const PopupContainer = () => {
   };
 
   return (
-    <div>
+    <div className={s.PopupContainer}>
       {popups.map((popup) => {
         const PopupComponent = popup.component;
         return (
