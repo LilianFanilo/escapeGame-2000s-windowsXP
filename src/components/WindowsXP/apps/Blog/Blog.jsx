@@ -19,23 +19,15 @@ export default function Blog({ onClose }) {
   };
 
   const videoUrls = [
-    "https://vimeo.com/939092771?share=copy",
-    "https://vimeo.com/939092660?share=copy",
-    "https://vimeo.com/939092730?share=copy",
-    "https://vimeo.com/939092683?share=copy",
-    "https://vimeo.com/951649490?share=copy",
-    "https://vimeo.com/951649395?share=copy",
-    "https://vimeo.com/939092753?share=copy",
-    "https://vimeo.com/939092598?share=copy",
-    "https://vimeo.com/951650104?share=copy",
-    "https://vimeo.com/939092705?share=copy",
-    "https://vimeo.com/939092630?share=copy",
-    "https://vimeo.com/951645886?share=copy",
-    "https://vimeo.com/951649680?share=copy",
-    "https://vimeo.com/951650154?share=copy",
-    "https://vimeo.com/951649767?share=copy",
-    "https://vimeo.com/951650029?share=copy",
-    "https://vimeo.com/951649848?share=copy",
+    "https://vimeo.com/939092730",
+    "https://vimeo.com/939092753",
+    "https://vimeo.com/951645886",
+    "https://vimeo.com/951649848",
+    "https://vimeo.com/951649767",
+    "https://vimeo.com/939092771",
+    "https://vimeo.com/951650029",
+    "https://vimeo.com/951649680",
+    "https://vimeo.com/951649490",
   ];
 
   const handleImageClick = (index) => {
