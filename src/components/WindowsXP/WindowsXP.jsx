@@ -11,8 +11,8 @@ import notepad_icon from "../../assets/WindowsIcons/notepad.png";
 import doc_icon from "../../assets/WindowsIcons/doc_icon.png";
 import blog_icon from "../../assets/WindowsIcons/blog_icone.png";
 import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
-import Window from "../Window/Window";
 import PopupContainer from "../PopUp/PopUp";
+import sound from "../../assets/sounds/error.wav";
 
 function WindowsXP() {
   const [trashVisible, setTrashVisible] = useState(false);
@@ -22,10 +22,7 @@ function WindowsXP() {
   const [audioVisible, setAudioVisible] = useState(false);
   const [popUpVisible, setPopUpVisible] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
-
-  const handleTrashIconDoubleClick = () => {
-    setTrashVisible(true);
-  };
+  const [errorPrivateVisible, setErrorPrivateVisible] = useState(false);
 
   const handleNoteIconDoubleClick = () => {
     setNoteVisible(true);
@@ -44,8 +41,12 @@ function WindowsXP() {
     setPopUpVisible(true);
   };
 
-  const handleErrorIconDoubleClick = () => {
+  const handleErrorDoubleClick = () => {
     setErrorVisible(true);
+  };
+
+  const handleErrorPrivateDoubleClick = () => {
+    setErrorPrivateVisible(true);
   };
 
   return (
@@ -54,7 +55,7 @@ function WindowsXP() {
         <OfficeFooter />
       </div>
       <div className={s.officeIcons}>
-        <div className={s.app_icon} onDoubleClick={handleTrashIconDoubleClick}>
+        <div className={s.app_icon} onDoubleClick={handleErrorDoubleClick}>
           <img
             draggable="false"
             height={30}
@@ -65,7 +66,7 @@ function WindowsXP() {
           <span className={s.title}>Corbeille</span>
         </div>
 
-        <div className={s.app_icon}>
+        <div className={s.app_icon} onDoubleClick={handleErrorDoubleClick}>
           <img draggable="false" height={30} width={30} src={IE_icon} alt="" />
           <span className={s.title}>Internet Explorer</span>
         </div>
@@ -82,13 +83,16 @@ function WindowsXP() {
         </div>
         {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
 
-        <div className={s.app_icon} onDoubleClick={handleErrorIconDoubleClick}>
+        <div
+          className={s.app_icon}
+          onDoubleClick={handleErrorPrivateDoubleClick}
+        >
           <img draggable="false" height={30} width={30} src={doc_icon} alt="" />
           <span className={s.title}>Documents</span>
         </div>
-        {errorVisible && (
+        {errorPrivateVisible && (
           <ErrorPopUp
-            onClose={() => setErrorVisible(false)}
+            onClose={() => setErrorPrivateVisible(false)}
             errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
             errorTextBtn={"Désolé..."}
             errorAudio={"/audios/ELO.m4a"}
@@ -125,6 +129,13 @@ function WindowsXP() {
           <Audiovisualiser onClose={() => setAudioVisible(false)} />
         )}
         {audioVisible && <PopupContainer />}
+
+        {errorVisible && (
+          <ErrorPopUp
+            onClose={() => setErrorVisible(false)}
+            errorAudio={sound}
+          />
+        )}
       </div>
     </>
   );

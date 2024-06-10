@@ -2,7 +2,7 @@ import ErrorPopUp from "../../ErrorPopUp/ErrorPopUp";
 import MenuItem from "../../MenuItem/MenuItem";
 import s from "./MenuFooter.module.scss";
 import sound from "../../../assets/sounds/error.wav";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import ButtonSystem from "../../ButtonSystem/ButtonSystem";
 import Notepad from "../apps/Notepad/Notepad";
 
@@ -11,18 +11,12 @@ function MenuFooter() {
   const [isVisible, setIsVisible] = useState(true);
   const [noteVisible, setNoteVisible] = useState(false);
   const [errorVisible, setErrorVisible] = useState(false);
-  const audioRef = useRef(null);
-
-  const playClickSound = () => {
-    audioRef.current.play().catch((error) => {
-      console.error("Error playing audio:", error);
-    });
-  };
 
   const handleMenuItemErrorClick = () => {
-    playClickSound();
     setIsVisible(true);
-    setComponentToShow(<ErrorPopUp onClose={() => setIsVisible(false)} />);
+    setComponentToShow(
+      <ErrorPopUp onClose={() => setIsVisible(false)} errorAudio={sound} />,
+    );
   };
 
   const handleMenuItemPrivateClick = () => {
@@ -96,7 +90,6 @@ function MenuFooter() {
                 onClick={handleMenuItemErrorClick}
               />
             </div>
-            <audio ref={audioRef} src={sound} />
             <div className={s.menuRight}>
               <MenuItem
                 itemImg="/images/menu_items/documents.png"
