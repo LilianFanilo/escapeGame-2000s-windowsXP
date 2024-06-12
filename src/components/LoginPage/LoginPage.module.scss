@@ -109,6 +109,8 @@ $login-gray: #f4f4f4;
       align-items: center;
 
       .textPageBottom {
+        height: -webkit-fit-content;
+        height: -moz-fit-content;
         height: fit-content;
         text-align: end;
       }
@@ -160,6 +162,7 @@ $login-gray: #f4f4f4;
 
   .profileBG {
     display: flex;
+    -moz-column-gap: 15px;
     column-gap: 15px;
     padding: 9px;
     border-radius: 2px;
@@ -187,6 +190,7 @@ $login-gray: #f4f4f4;
       .inputContainer {
         display: flex;
         align-items: center;
+        -moz-column-gap: 10px;
         column-gap: 10px;
         input {
           height: 32px;
@@ -198,10 +202,22 @@ $login-gray: #f4f4f4;
           border-radius: 5px;
 
           &:hover {
+            -webkit-filter: brightness(1.1);
             filter: brightness(1.1);
           }
         }
       }
     }
+  }
+}
+
+.togglePwd {
+  position: absolute;
+  left: 162px;
+  transform: translateX(-100%);
+  opacity: 0.7;
+  img {
+    width: 15px;
+    aspect-ratio: 1;
   }
 }

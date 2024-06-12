@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import s from "./LoginPage.module.scss";
 import "./LoginPage.scss";
 import ButtonSystem from "../ButtonSystem/ButtonSystem";
@@ -116,6 +116,18 @@ function LoginPage() {
 }
 
 function ProfileLogin(props) {
+  const [isPwdHide, setIsPwdHide] = useState(false);
+  const ShowPassword = () => {
+    setIsPwdHide(!isPwdHide);
+    console.log(isPwdHide);
+    var x = document.getElementById("loginPassword");
+    if (x.type === "password") {
+      x.type = "text";
+    } else {
+      x.type = "password";
+    }
+  };
+
   return (
     <>
       <div className={s.ProfileLogin}>
@@ -145,6 +157,14 @@ function ProfileLogin(props) {
                   draggable="false"
                   placeholder="JJMMAAAA"
                 />
+                <span className={s.togglePwd} onClick={ShowPassword}>
+                  {isPwdHide && (
+                    <img src="./images/login_page/password-hide.svg" alt="" />
+                  )}
+                  {!isPwdHide && (
+                    <img src="./images/login_page/password-show.svg" alt="" />
+                  )}
+                </span>
                 <img
                   id="accessOffice"
                   src="./images/buttons/btn_switch_user.png"
