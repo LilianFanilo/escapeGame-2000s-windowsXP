@@ -19,6 +19,7 @@ const PopupStyle5 = ({ onClose }) => {
       onClose={onClose}
       appName="VivelleDop Fixation Béton"
       appIcon={audiovisualiser_icon}
+      randomPopUp
     >
       <div className={s.PopupStyle5}></div>
     </Window>

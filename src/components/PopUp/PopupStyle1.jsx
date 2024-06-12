@@ -15,15 +15,14 @@ const PopupStyle1 = ({ onClose }) => {
   }, []);
 
   return (
-    <div className={s.Popup}>
-      <Window
-        onClose={onClose}
-        appName="Chocapic c'est fort en chocolat!"
-        appIcon={audiovisualiser_icon}
-      >
-        <div className={s.PopupStyle1}></div>
-      </Window>
-    </div>
+    <Window
+      onClose={onClose}
+      appName="Chocapic c'est fort en chocolat!"
+      appIcon={audiovisualiser_icon}
+      randomPopUp
+    >
+      <div className={s.PopupStyle1}></div>
+    </Window>
   );
 };
 
