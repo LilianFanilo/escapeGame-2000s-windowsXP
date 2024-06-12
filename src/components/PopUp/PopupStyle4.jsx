@@ -20,6 +20,7 @@ const PopupStyle4 = ({ onClose }) => {
       appName="SNCF Voyager avec rapidité et tranquillité"
       appIcon={audiovisualiser_icon}
       randomPopUp
+      CloseBtnOnly
     >
       <div className={s.PopupStyle4}></div>
     </Window>

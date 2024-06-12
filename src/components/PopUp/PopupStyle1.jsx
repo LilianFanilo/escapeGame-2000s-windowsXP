@@ -20,6 +20,7 @@ const PopupStyle1 = ({ onClose }) => {
       appName="Chocapic c'est fort en chocolat!"
       appIcon={audiovisualiser_icon}
       randomPopUp
+      CloseBtnOnly
     >
       <div className={s.PopupStyle1}></div>
     </Window>
