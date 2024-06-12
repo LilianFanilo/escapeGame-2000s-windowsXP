@@ -432,6 +432,10 @@
   }
 }
 
+.border {
+  border: 1px solid #ffffff;
+}
+
 .videoModal {
   position: fixed;
   top: 0;
@@ -448,18 +452,63 @@
   position: relative;
   max-width: 800px;
   background: #ed8fe4;
-  padding: 20px;
+  padding: 2.4rem 0 0;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  border: 8px solid #e905d2;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 480px;
+  // background-color: #d50237;
+  height: 160px;
+  background: rgba(0, 0, 0, 0); /* Rendre la superposition invisible */
+  z-index: 2;
+}
+
+.overlay2 {
+  position: absolute;
+  top: 93%;
+  left: 90%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  // background-color: #d50237;
+  height: 50px;
+  background: rgba(0, 0, 0, 0); /* Rendre la superposition invisible */
+  z-index: 2;
+}
+
+.overlay3 {
+  position: absolute;
+  top: 25%;
+  left: 95%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  // background-color: #d50237;
+  height: 120px;
+  background: rgba(0, 0, 0, 0); /* Rendre la superposition invisible */
+  z-index: 2;
+}
+
+.reactPlayer {
+  position: relative;
+  z-index: 1;
 }
 
 .closeButton {
   position: absolute;
+  margin: 0.2rem;
   top: 0;
   right: 0;
-  background: none;
-  border: none;
   font-size: 1.5rem;
+  color: #ffffff;
   cursor: pointer;
+  background-color: #ef1cda;
+  border: 1px solid #ffffff;
+  border-radius: 3px;
 }
 
 .videoPlayer {
