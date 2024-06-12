@@ -11,11 +11,11 @@
     "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}"
   },
   "dependencies": {
-    "howler": "^2.2.4",
     "onchange": "^7.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-player": "^2.16.0"
+    "react-player": "^2.16.0",
+    "screenfull": "^6.0.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",

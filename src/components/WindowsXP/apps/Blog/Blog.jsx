@@ -1,4 +1,4 @@
-import { Suspense, useRef, useState } from "react";
+import { Suspense, useRef, useState, useEffect } from "react";
 import ReactPlayer from "react-player";
 import s from "./Blog.module.scss";
 import Window from "../../../Window/Window";
@@ -29,6 +29,29 @@ export default function Blog({ onClose }) {
     "https://vimeo.com/951649680",
     "https://vimeo.com/951649490",
   ];
+
+  useEffect(() => {
+    const handleClick = (event) => {
+      // Vérifiez si l'élément cliqué est un lien externe
+      const target = event.target.closest("a");
+      if (target && target.href) {
+        const isExternal =
+          target.href && !target.href.startsWith(window.location.origin);
+        if (isExternal) {
+          event.preventDefault();
+          alert("Les redirections externes sont bloquées.");
+        }
+      }
+    };
+
+    // Ajouter un gestionnaire d'événements global pour les clics
+    document.addEventListener("click", handleClick);
+
+    // Nettoyer le gestionnaire d'événements lorsque le composant est démonté
+    return () => {
+      document.removeEventListener("click", handleClick);
+    };
+  }, []);
 
   const handleImageClick = (index) => {
     const selectedVideoUrl = videoUrls[index];
@@ -250,7 +273,12 @@ export default function Blog({ onClose }) {
                         <button className={s.closeButton} onClick={buttonClose}>
                           X
                         </button>
-                        <ReactPlayer url={videoUrl} controls />
+                        <div className={s.border}>
+                          <div className={s.overlay} />
+                          <div className={s.overlay2} />
+                          <div className={s.overlay3} />
+                          <ReactPlayer url={videoUrl} playing controls />
+                        </div>
                       </div>
                     </div>
                   )}
