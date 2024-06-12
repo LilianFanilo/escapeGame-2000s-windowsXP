@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Window from "../Window/Window";
 import s from "./PopUp.module.scss";
-import popups_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
+import popups_icon from "../../assets/WindowsIcons/popups_icon.svg";
 
 const PopupStyle4 = ({ onClose }) => {
   useEffect(() => {
