@@ -188,16 +188,16 @@ function MenuFooter() {
             />
           </footer>
         </div>
-        {isVisible && componentToShow}
-        {errorVisible && (
-          <ErrorPopUp
-            onClose={() => setErrorVisible(false)}
-            errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
-            errorTextBtn={"Désolé..."}
-            errorAudio={"/audios/ELO.m4a"}
-          />
-        )}
       </div>
+      {isVisible && componentToShow}
+      {errorVisible && (
+        <ErrorPopUp
+          onClose={() => setErrorVisible(false)}
+          errorContent={"HÉ C'EST PRIVÉ OKAY ?!"}
+          errorTextBtn={"Désolé..."}
+          errorAudio={"/audios/ELO.m4a"}
+        />
+      )}
       {noteVisible && <Notepad onClose={() => setNoteVisible(false)} />}
     </>
   );
