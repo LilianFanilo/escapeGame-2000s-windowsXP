@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Window from "../Window/Window";
 import s from "./PopUp.module.scss";
-import audiovisualiser_icon from "../../assets/WindowsIcons/audiovisualiser_icon.png";
+import popups_icon from "../../assets/WindowsIcons/popups_icon.svg";
 
 const PopupStyle3 = ({ onClose }) => {
   useEffect(() => {
@@ -17,7 +17,7 @@ const PopupStyle3 = ({ onClose }) => {
     <Window
       onClose={onClose}
       appName="Nouveau Big mac !"
-      appIcon={audiovisualiser_icon}
+      appIcon={popups_icon}
       randomPopUp
       CloseBtnOnly
     >
