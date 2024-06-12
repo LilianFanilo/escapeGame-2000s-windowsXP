@@ -19,6 +19,8 @@ const PopupStyle2 = ({ onClose }) => {
       onClose={onClose}
       appName="Mise à jour Avast"
       appIcon={audiovisualiser_icon}
+      randomPopUp
+      CloseBtnOnly
     >
       <div className={s.PopupStyle2}></div>
     </Window>

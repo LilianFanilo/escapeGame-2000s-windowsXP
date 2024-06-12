@@ -18,6 +18,8 @@ const PopupStyle3 = ({ onClose }) => {
       onClose={onClose}
       appName="Nouveau Big mac !"
       appIcon={audiovisualiser_icon}
+      randomPopUp
+      CloseBtnOnly
     >
       <div className={s.PopupStyle3}></div>
     </Window>

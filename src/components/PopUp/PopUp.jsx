@@ -48,9 +48,10 @@ const PopupContainer = () => {
       {popups.map((popup) => {
         const PopupComponent = popup.component;
         return (
-          <div key={popup.id}>
-            <PopupComponent onClose={() => handleClosePopup(popup.id)} />
-          </div>
+          <PopupComponent
+            key={popup.id}
+            onClose={() => handleClosePopup(popup.id)}
+          />
         );
       })}
     </div>
