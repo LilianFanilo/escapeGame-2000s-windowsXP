@@ -51,7 +51,7 @@ export default function Window({
     if (isFirstLoop) {
       if (randomPopUp) {
         setWindowPosition({
-          x: windowEl.offsetWidth * -(getRandomInt(0, 6) / 10),
+          x: windowEl.offsetWidth * -(getRandomInt(0, 5) / 10),
           y: windowEl.offsetHeight * -(getRandomInt(0, 5) / 10),
         });
       } else {
