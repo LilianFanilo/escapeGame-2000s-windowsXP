@@ -24,7 +24,7 @@ export default function Blog({ onClose }) {
     "https://vimeo.com/951645886",
     "https://vimeo.com/951649848",
     "https://vimeo.com/951649767",
-    "https://vimeo.com/939092771",
+    "https://vimeo.com/939092705",
     "https://vimeo.com/951650029",
     "https://vimeo.com/951649680",
     "https://vimeo.com/951649490",
